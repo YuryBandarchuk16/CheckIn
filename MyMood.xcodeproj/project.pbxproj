@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		45FB466DF9CE0355242BD6DE /* Pods_MyMoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89278F4B07DE7B7B4A330792 /* Pods_MyMoodTests.framework */; };
 		656E21F01FA91CCB008F9827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E21EF1FA91CCB008F9827 /* AppDelegate.swift */; };
-		656E21F21FA91CCB008F9827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E21F11FA91CCB008F9827 /* ViewController.swift */; };
+		656E21F21FA91CCB008F9827 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E21F11FA91CCB008F9827 /* AuthViewController.swift */; };
 		656E21F51FA91CCB008F9827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656E21F31FA91CCB008F9827 /* Main.storyboard */; };
 		656E21F71FA91CCB008F9827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656E21F61FA91CCB008F9827 /* Assets.xcassets */; };
 		656E21FA1FA91CCB008F9827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656E21F81FA91CCB008F9827 /* LaunchScreen.storyboard */; };
 		656E22051FA91CCC008F9827 /* MyMoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E22041FA91CCC008F9827 /* MyMoodTests.swift */; };
 		656E22101FA91CCC008F9827 /* MyMoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E220F1FA91CCC008F9827 /* MyMoodUITests.swift */; };
+		65C0FE521FA9285E00194DF7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FE511FA9285E00194DF7 /* UIViewController+Extension.swift */; };
+		65C0FE541FA928C000194DF7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FE531FA928C000194DF7 /* Utils.swift */; };
+		65C0FE561FA929A100194DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65C0FE551FA929A100194DF7 /* GoogleService-Info.plist */; };
+		65C0FE581FA92B7400194DF7 /* AuthLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FE571FA92B7400194DF7 /* AuthLogic.swift */; };
 		E27317AC2A27C1BA5D68F43D /* Pods_MyMoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17CA7EF7BDE6CE9B28ED0A3 /* Pods_MyMoodUITests.framework */; };
 		EDF2EFDDB131613A08B6871C /* Pods_MyMood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3F22D44D3D648FBABE29E9 /* Pods_MyMood.framework */; };
 /* End PBXBuildFile section */
@@ -44,7 +48,7 @@
 		5A3F22D44D3D648FBABE29E9 /* Pods_MyMood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		656E21EC1FA91CCB008F9827 /* MyMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656E21EF1FA91CCB008F9827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		656E21F11FA91CCB008F9827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		656E21F11FA91CCB008F9827 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		656E21F41FA91CCB008F9827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		656E21F61FA91CCB008F9827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		656E21F91FA91CCB008F9827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +59,10 @@
 		656E220B1FA91CCC008F9827 /* MyMoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		656E220F1FA91CCC008F9827 /* MyMoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoodUITests.swift; sourceTree = "<group>"; };
 		656E22111FA91CCC008F9827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65C0FE511FA9285E00194DF7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		65C0FE531FA928C000194DF7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		65C0FE551FA929A100194DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65C0FE571FA92B7400194DF7 /* AuthLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLogic.swift; sourceTree = "<group>"; };
 		7C6889C56DC35026E763A664 /* Pods-MyMoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMoodTests/Pods-MyMoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		89278F4B07DE7B7B4A330792 /* Pods_MyMoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE439FDECB5A088EE11745D5 /* Pods-MyMood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMood/Pods-MyMood.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,12 +135,17 @@
 		656E21EE1FA91CCB008F9827 /* MyMood */ = {
 			isa = PBXGroup;
 			children = (
+				65C0FE531FA928C000194DF7 /* Utils.swift */,
+				65C0FE501FA9284B00194DF7 /* Extensions */,
+				65C0FE4F1FA926D700194DF7 /* StudentViewControllers */,
 				656E21EF1FA91CCB008F9827 /* AppDelegate.swift */,
-				656E21F11FA91CCB008F9827 /* ViewController.swift */,
+				656E21F11FA91CCB008F9827 /* AuthViewController.swift */,
+				65C0FE571FA92B7400194DF7 /* AuthLogic.swift */,
 				656E21F31FA91CCB008F9827 /* Main.storyboard */,
 				656E21F61FA91CCB008F9827 /* Assets.xcassets */,
 				656E21F81FA91CCB008F9827 /* LaunchScreen.storyboard */,
 				656E21FB1FA91CCB008F9827 /* Info.plist */,
+				65C0FE551FA929A100194DF7 /* GoogleService-Info.plist */,
 			);
 			path = MyMood;
 			sourceTree = "<group>";
@@ -153,6 +166,21 @@
 				656E22111FA91CCC008F9827 /* Info.plist */,
 			);
 			path = MyMoodUITests;
+			sourceTree = "<group>";
+		};
+		65C0FE4F1FA926D700194DF7 /* StudentViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StudentViewControllers;
+			sourceTree = "<group>";
+		};
+		65C0FE501FA9284B00194DF7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				65C0FE511FA9285E00194DF7 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6CC87F807304276146B571CC /* Frameworks */ = {
@@ -282,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				656E21FA1FA91CCB008F9827 /* LaunchScreen.storyboard in Resources */,
+				65C0FE561FA929A100194DF7 /* GoogleService-Info.plist in Resources */,
 				656E21F71FA91CCB008F9827 /* Assets.xcassets in Resources */,
 				656E21F51FA91CCB008F9827 /* Main.storyboard in Resources */,
 			);
@@ -446,8 +475,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				656E21F21FA91CCB008F9827 /* ViewController.swift in Sources */,
+				65C0FE521FA9285E00194DF7 /* UIViewController+Extension.swift in Sources */,
+				656E21F21FA91CCB008F9827 /* AuthViewController.swift in Sources */,
+				65C0FE581FA92B7400194DF7 /* AuthLogic.swift in Sources */,
 				656E21F01FA91CCB008F9827 /* AppDelegate.swift in Sources */,
+				65C0FE541FA928C000194DF7 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +652,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yury.bandarchuk.MyMood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -636,7 +668,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yury.bandarchuk.MyMood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
