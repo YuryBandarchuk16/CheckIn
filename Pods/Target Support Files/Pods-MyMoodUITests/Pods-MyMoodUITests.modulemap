@@ -1,0 +1,6 @@
+framework module Pods_MyMoodUITests {
+  umbrella header "Pods-MyMoodUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
