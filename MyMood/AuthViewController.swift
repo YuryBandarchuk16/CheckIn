@@ -15,9 +15,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    private var keyboardAdjusted = false
+    private var visibleLocation: CGFloat!
+    private var lastKeyboardOffset: CGFloat = 0.0
+    private let animationDuration: TimeInterval = 0.5
+    private let teachersConfirmationCode = "awchgi"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        visibleLocation = passwordTextField.frame.origin.y + passwordTextField.bounds.height + 60
         usernameTextField.delegate = self
         passwordTextField.delegate = self
     }
@@ -47,7 +53,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         let auth = AuthLogic.sharedInstance()
-        
         MBProgressHUD.showAdded(to: self.view, animated: true)
         auth.logInWith(email: email, password: password) { (user, error) in
             DispatchQueue.main.async {
@@ -62,6 +67,83 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+    }
+    
+    @IBAction func signUpButtonClicked(_ sender: Any) {
+        let email = (usernameTextField.text ?? "") + "@mymoodapp.com"
+        let password = (passwordTextField.text ?? "")
+        if (!Utils.isValidEmail(email: email)) {
+            Utils.showAlertOnError(title: "Incorrect username", text: "The username you entered contains error, please, try again.", viewController: self)
+            return
+        }
+        let alertController = UIAlertController(title: "Teacher confirmation", message: "Please, enter the teacher's access code", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Submit", style: .default) { (action) in
+            guard let textFields = alertController.textFields else { return }
+            if textFields.count > 0 {
+                let textField = textFields.first!
+                self.registerTeacher(email: email, password: password, code: textField.text!)
+            }
+        }
+        alertController.addAction(alertAction)
+        alertController.addTextField { (textField) in
+            textField.placeholder = ""
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func registerTeacher(email: String, password: String, code: String) {
+        if code.lowercased() != self.teachersConfirmationCode {
+            Utils.showAlertOnError(title: "Error", text: "Teacher's confirmation code is incorrect.", viewController: self)
+        } else {
+            let auth = AuthLogic.sharedInstance()
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            auth.registerWith(email: email, password: password, returnCallBack: { (user, error) in
+                DispatchQueue.main.async {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+                if let error = error {
+                    Utils.showAlertOnError(title: "Error", text: error.localizedDescription, viewController: self)
+                } else {
+                    if let user = user {
+                        print("User created with id: \(user.uid)")
+                    }
+                }
+            })
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        if keyboardAdjusted == false {
+            lastKeyboardOffset = getKeyboardHeight(notification: notification)
+            UIView.animate(withDuration: animationDuration, animations: {
+                self.view.frame.origin.y -= self.lastKeyboardOffset
+            })
+            keyboardAdjusted = true
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        if keyboardAdjusted == true {
+            UIView.animate(withDuration: animationDuration, animations: {
+                self.view.frame.origin.y += self.lastKeyboardOffset
+            })
+            keyboardAdjusted = false
+        }
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        let needHeight = visibleLocation + keyboardSize.cgRectValue.height
+        let result = max(0, needHeight - UIScreen.main.bounds.height + 10)
+        return result
     }
     
 }

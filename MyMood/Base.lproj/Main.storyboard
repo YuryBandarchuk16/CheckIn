@@ -55,16 +55,31 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVb-J2-fj1">
-                                <rect key="frame" x="137.66666666666666" y="416" width="100" height="30"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="137.66666666666666" y="423" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="NBk-v0-8RE"/>
                                     <constraint firstAttribute="height" constant="30" id="wIf-fZ-auk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signInButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WBH-xw-EIE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruy-nR-s4X">
+                                <rect key="frame" x="137.66666666666666" y="459" width="100" height="35"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="GRl-Ro-y15"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Siw-21-hLI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6o1-at-xMF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,13 +88,15 @@
                             <constraint firstItem="1oC-Pn-lwa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="75E-AL-Q4v"/>
                             <constraint firstItem="gOR-lU-J1p" firstAttribute="top" secondItem="lGH-P9-PBU" secondAttribute="bottom" constant="8" id="Ezh-jD-A4o"/>
                             <constraint firstItem="lGH-P9-PBU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="HBP-Ea-iPY"/>
+                            <constraint firstItem="Ruy-nR-s4X" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="N3y-9f-lX5"/>
                             <constraint firstItem="lGH-P9-PBU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PHE-8L-gWF"/>
                             <constraint firstItem="FL2-JQ-9Cn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vvc-uu-4b9"/>
                             <constraint firstItem="lGH-P9-PBU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WHt-VZ-SBU"/>
                             <constraint firstItem="gOR-lU-J1p" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cZh-eH-7Lu"/>
+                            <constraint firstItem="Ruy-nR-s4X" firstAttribute="top" secondItem="zVb-J2-fj1" secondAttribute="bottom" constant="6" id="hbC-fd-wNI"/>
                             <constraint firstItem="1oC-Pn-lwa" firstAttribute="top" secondItem="gOR-lU-J1p" secondAttribute="bottom" constant="6" id="iPS-Aa-Htj"/>
                             <constraint firstItem="FL2-JQ-9Cn" firstAttribute="top" secondItem="1oC-Pn-lwa" secondAttribute="bottom" constant="6" id="mFb-fF-rBh"/>
-                            <constraint firstItem="zVb-J2-fj1" firstAttribute="top" secondItem="FL2-JQ-9Cn" secondAttribute="bottom" constant="8" id="o8Q-VA-JVU"/>
+                            <constraint firstItem="zVb-J2-fj1" firstAttribute="top" secondItem="FL2-JQ-9Cn" secondAttribute="bottom" constant="15" id="o8Q-VA-JVU"/>
                             <constraint firstItem="zVb-J2-fj1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rI7-Ce-w26"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
