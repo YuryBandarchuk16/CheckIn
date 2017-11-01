@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 import MBProgressHUD
 
 class ViewController: UIViewController, UITextFieldDelegate {
@@ -55,15 +55,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let auth = AuthLogic.sharedInstance()
         MBProgressHUD.showAdded(to: self.view, animated: true)
         auth.logInWith(email: email, password: password) { (user, error) in
-            DispatchQueue.main.async {
-                MBProgressHUD.hide(for: self.view, animated: true)
-            }
             if let error = error {
+                self.hideProgressBar()
                 let message = self.updateErrorDescription(description: error.localizedDescription)
                 Utils.showAlertOnError(title: "Error", text: message, viewController: self)
             } else {
                 if let user = user {
-                    Utils.showAlertOnError(title: "Success", text: "User id is \(user.uid)", viewController: self)
+                    let storage = Firestore.firestore()
+                    storage.collection("users").whereField("user_id", isEqualTo: user.uid).getDocuments(completion: { (snapshot, error) in
+                        self.hideProgressBar()
+                        if let error = error {
+                            Utils.showAlertOnError(title: "Error", text: error.localizedDescription, viewController: self)
+                        } else {
+                            for document in snapshot!.documents {
+                                let data = document.data()
+                                guard let userId = data["user_id"] as? String,
+                                      let isAdmin = data["is_admin"] as? Int
+                                    else { return }
+                                Utils.setUserId(id: userId)
+                                if isAdmin == 1 {
+                                    Utils.makeCurrentUserAdmin()
+                                } else {
+                                    Utils.makeCurrentUserNonAdmin()
+                                }
+                            }
+                        }
+                        var nextSegueId: String = Segues.studentLoginSegue.rawValue
+                        if Utils.isCurrentUserAdmin() {
+                            nextSegueId = Segues.teacherLoginSegue.rawValue
+                        }
+                        self.performSegue(withIdentifier: nextSegueId, sender: self)
+                    })
                 }
             }
         }
@@ -98,17 +120,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let auth = AuthLogic.sharedInstance()
             MBProgressHUD.showAdded(to: self.view, animated: true)
             auth.registerWith(email: email, password: password, returnCallBack: { (user, error) in
-                DispatchQueue.main.async {
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                }
                 if let error = error {
+                    self.hideProgressBar()
                     Utils.showAlertOnError(title: "Error", text: error.localizedDescription, viewController: self)
                 } else {
                     if let user = user {
+                        let storage = Firestore.firestore()
+                        let currentUserData: [String: Any] = [
+                            "user_id": user.uid,
+                            "is_admin": 1
+                        ]
+                        storage.collection("users").addDocument(data: currentUserData) { error in
+                            self.hideProgressBar()
+                            if let error = error {
+                                Utils.showAlertOnError(title: "Error", text: error.localizedDescription, viewController: self)
+                            } else {
+                                Utils.showAlertOnError(title: "Success", text: "Your account has been created! You can now sign in using specified credentials.", viewController: self)
+                            }
+                        }
                         print("User created with id: \(user.uid)")
                     }
                 }
             })
+        }
+    }
+    
+    private func hideProgressBar() {
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
         }
     }
     
@@ -144,6 +183,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let needHeight = visibleLocation + keyboardSize.cgRectValue.height
         let result = max(0, needHeight - UIScreen.main.bounds.height + 10)
         return result
+    }
+    
+    private enum Segues: String {
+        case studentLoginSegue
+        case teacherLoginSegue
     }
     
 }

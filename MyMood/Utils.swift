@@ -11,6 +11,51 @@ import Foundation
 
 class Utils {
     
+    private static var currentUserId: String = "###"
+    private static var isAdmin: Bool = false
+    
+    public static let months: [String] = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ]
+    
+    public static func convertIntegerToDay(_ integer: Int) -> String {
+        if integer < 10 {
+            return "0\(integer)"
+        }
+        return "\(integer)"
+    }
+    
+    public static func setUserId(id: String) {
+        Utils.currentUserId = id
+    }
+    
+    public static func getUserId() -> String {
+        return Utils.currentUserId
+    }
+    
+    public static func makeCurrentUserAdmin() {
+        Utils.isAdmin = true
+    }
+    
+    public static func makeCurrentUserNonAdmin() {
+        Utils.isAdmin = false
+    }
+    
+    public static func isCurrentUserAdmin() -> Bool {
+        return Utils.isAdmin
+    }
+    
     public static func isValidEmail(email: String?) -> Bool {
         guard let email = email else {
             return false
