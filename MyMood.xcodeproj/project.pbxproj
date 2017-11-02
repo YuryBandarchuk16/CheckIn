@@ -139,7 +139,7 @@
 			children = (
 				65C0FE531FA928C000194DF7 /* Utils.swift */,
 				65C0FE501FA9284B00194DF7 /* Extensions */,
-				65C0FE4F1FA926D700194DF7 /* StudentViewControllers */,
+				65C0FE4F1FA926D700194DF7 /* Student */,
 				656E21EF1FA91CCB008F9827 /* AppDelegate.swift */,
 				656E21F11FA91CCB008F9827 /* AuthViewController.swift */,
 				65C0FE571FA92B7400194DF7 /* AuthLogic.swift */,
@@ -170,12 +170,12 @@
 			path = MyMoodUITests;
 			sourceTree = "<group>";
 		};
-		65C0FE4F1FA926D700194DF7 /* StudentViewControllers */ = {
+		65C0FE4F1FA926D700194DF7 /* Student */ = {
 			isa = PBXGroup;
 			children = (
 				65C0FE591FA9EE8700194DF7 /* StudentMainViewController.swift */,
 			);
-			path = StudentViewControllers;
+			path = Student;
 			sourceTree = "<group>";
 		};
 		65C0FE501FA9284B00194DF7 /* Extensions */ = {

@@ -181,7 +181,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         let needHeight = visibleLocation + keyboardSize.cgRectValue.height
-        let result = max(0, needHeight - UIScreen.main.bounds.height + 10)
+        let result = max(0, needHeight - UIScreen.main.bounds.height + 30)
         return result
     }
     
