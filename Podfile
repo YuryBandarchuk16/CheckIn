@@ -13,6 +13,8 @@ target 'MyMood' do
   pod 'Firebase/Firestore'
   pod 'RippleEffectView'
   pod 'MBProgressHUD', '~> 1.0.0'
+  pod 'NXDrawKit', '~> 0.5.0'
+  pod 'RSKImageCropper'  
   
   target 'MyMoodTests' do
     inherit! :search_paths
