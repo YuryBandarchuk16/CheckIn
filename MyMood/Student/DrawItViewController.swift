@@ -77,7 +77,7 @@ class DrawItViewController: UIViewController {
     fileprivate func setupCanvas() {
         //        let canvasView = Canvas(backgroundImage: UIImage.init(named: "frame")!) // You can init with custom background image
         let canvasView = Canvas()
-        canvasView.frame = CGRect(x: 20, y: 80, width: self.view.frame.size.width - 40, height: self.view.frame.size.height - 140)
+        canvasView.frame = CGRect(x: 20, y: 70, width: self.view.frame.size.width - 40, height: self.view.frame.size.width - 40)
         canvasView.delegate = self
         canvasView.layer.borderColor = UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 0.8).cgColor
         canvasView.layer.borderWidth = 2.0
@@ -213,8 +213,8 @@ extension DrawItViewController: CanvasDelegate
         
         // you can share your image with UIActivityDrawItViewController
         if let pngImage = image?.asPNGImage() {
-            drawItImageView.image = pngImage
             if self.status {
+                drawItImageView.image = pngImage
                 return
             }
             let activityDrawItViewController = UIActivityViewController(activityItems: [pngImage], applicationActivities: nil)
