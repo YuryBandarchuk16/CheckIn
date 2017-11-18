@@ -6,7 +6,6 @@ PODS:
   - BoringSSL/Implementation (9.0):
     - BoringSSL/Interface (= 9.0)
   - BoringSSL/Interface (9.0)
-  - CVCalendar (1.6.0)
   - Firebase/Auth (4.4.0):
     - Firebase/Core
     - FirebaseAuth (= 4.3.0)
@@ -78,6 +77,7 @@ PODS:
   - RealmSwift (2.10.2):
     - Realm (= 2.10.2)
   - RippleEffectView (1.0.2)
+  - RSDayFlow (1.6.1)
   - RSKImageCropper (1.6.3)
   - RxCocoa (3.6.1):
     - RxSwift (~> 3.6)
@@ -88,7 +88,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
-  - CVCalendar (~> 1.6.0)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -96,6 +95,7 @@ DEPENDENCIES:
   - NXDrawKit (~> 0.5.0)
   - RealmSwift
   - RippleEffectView
+  - RSDayFlow
   - RSKImageCropper
   - RxCocoa (~> 3.0)
   - RxRealm
@@ -104,7 +104,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BoringSSL: 19083b821ef3ae0f758fae15482e183003b1e265
-  CVCalendar: d6da92b579dfc1e0939e324dfffd2e1045cf69b1
   Firebase: 3e92884a63e8f76d107c43a67d2ab9071e1eda10
   FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
   FirebaseAuth: e0087d479709b20b9613b804704a928d6eafb052
@@ -125,11 +124,12 @@ SPEC CHECKSUMS:
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   RippleEffectView: c9fee7ac56e59dcf8920bc8f651683b129bd87a4
+  RSDayFlow: be619e2348f6b1332040f65f7f1e49ec0903bca0
   RSKImageCropper: 356e36fc58c57c371b5d8b23d603936d6a73df6c
   RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
   RxRealm: 9cf5c15c5312fc770aaa542a360cffec4916e63a
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
 
-PODFILE CHECKSUM: f825b39acd58b5cca407075e2e8facfcb1c9bc26
+PODFILE CHECKSUM: 29aec351d2b3df27f8091805cc3d99bbbc4e5c80
 
 COCOAPODS: 1.2.1

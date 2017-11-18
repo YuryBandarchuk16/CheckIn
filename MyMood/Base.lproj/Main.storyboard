@@ -192,7 +192,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kMZ-n2-qJA">
-                                <rect key="frame" x="98.333333333333314" y="165" width="179" height="35"/>
+                                <rect key="frame" x="92.666666666666671" y="165" width="190.66666666666663" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="PMi-sN-4xi"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="VVY-i6-Myd"/>
@@ -210,7 +210,7 @@
                                 <color key="onTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher Check In " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DK1-bv-Mvi">
-                                <rect key="frame" x="73" y="727" width="140" height="31"/>
+                                <rect key="frame" x="72.999999999999986" y="727" width="141.66666666666663" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="bj4-xd-6P3"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="rK8-qe-0ft"/>
@@ -223,10 +223,10 @@
                                 <rect key="frame" x="16" y="333" width="343" height="386"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="oQi-hz-vPd">
-                                        <rect key="frame" x="8" y="8" width="86" height="155"/>
+                                        <rect key="frame" x="8" y="8" width="88" height="155"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-zp-6vC">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Happy" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -236,7 +236,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wax-ch-z0X">
-                                                <rect key="frame" x="0.0" y="45" width="85" height="20"/>
+                                                <rect key="frame" x="0.0" y="45" width="88" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Hopeful" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,7 +246,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDI-Wu-3uS">
-                                                <rect key="frame" x="0.0" y="90" width="59" height="20"/>
+                                                <rect key="frame" x="0.0" y="90" width="60" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Mad" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,10 +268,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="gSP-1e-NOf">
-                                        <rect key="frame" x="236" y="8" width="99" height="155"/>
+                                        <rect key="frame" x="234" y="8" width="101" height="155"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjE-om-Fh7">
-                                                <rect key="frame" x="0.0" y="0.0" width="82" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Excited" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -291,7 +291,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaR-Qh-ZQB">
-                                                <rect key="frame" x="0.0" y="90" width="99" height="20"/>
+                                                <rect key="frame" x="0.0" y="90" width="101" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Confused" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -301,7 +301,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jF-M3-eet">
-                                                <rect key="frame" x="0.0" y="135" width="84" height="20"/>
+                                                <rect key="frame" x="0.0" y="135" width="87" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Worried" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -532,7 +532,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="nQq-Fe-1jx">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="nQq-Fe-1jx">
                                         <rect key="frame" x="155" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="lvn-b3-SW3"/>
@@ -549,21 +549,28 @@
                                 <rect key="frame" x="0.0" y="215" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classCell" id="2wv-rK-WBf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classCell" rowHeight="-5" id="2wv-rK-WBf">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2wv-rK-WBf" id="00Z-pJ-wgE">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Some value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkB-mO-V1X">
-                                                    <rect key="frame" x="8" y="11" width="100" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Some value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UkB-mO-V1X">
+                                                    <rect key="frame" x="8" y="8" width="326" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="uA2-Wm-scV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UkB-mO-V1X" firstAttribute="leading" secondItem="00Z-pJ-wgE" secondAttribute="leading" constant="8" id="FAt-zQ-NPQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="UkB-mO-V1X" secondAttribute="trailing" constant="8" id="o6u-9p-doe"/>
+                                                <constraint firstItem="UkB-mO-V1X" firstAttribute="top" secondItem="00Z-pJ-wgE" secondAttribute="top" constant="8" id="oYq-Qu-XXk"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="oDL-Xa-52N" kind="show" id="SEV-eU-OPw"/>
@@ -600,10 +607,38 @@
                         <viewLayoutGuide key="safeArea" id="X0T-Hv-5oH"/>
                     </view>
                     <navigationItem key="navigationItem" id="gFU-Lm-tpS"/>
+                    <connections>
+                        <outlet property="calendarImageView" destination="nQq-Fe-1jx" id="YEu-gz-GE6"/>
+                        <outlet property="dateLabel" destination="W3k-gz-qFV" id="O1S-gy-tDU"/>
+                        <outlet property="tableView" destination="wOY-Nj-R2D" id="Jid-GM-zZO"/>
+                        <segue destination="j4c-LW-a48" kind="show" identifier="showCalendar" id="qpl-wk-QlE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kJ-HR-8mq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989" y="686"/>
+            <point key="canvasLocation" x="1988" y="685.71428571428578"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="p56-XW-xhG">
+            <objects>
+                <viewController id="j4c-LW-a48" customClass="CalendarViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xC5-FT-2Yz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="jlW-He-ONW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Calendar" id="FeF-aU-rue">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UQb-Ef-dw4">
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="j4c-LW-a48" id="xrj-cV-xw9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpF-Yn-6o3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="1511.8226600985222"/>
         </scene>
         <!--Teacher Pick Mood Area View Controller-->
         <scene sceneID="kS8-o6-kGQ">
@@ -665,7 +700,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feeling Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg4-N8-G1y">
-                                                    <rect key="frame" x="10" y="5" width="105.33333333333333" height="30"/>
+                                                    <rect key="frame" x="10" y="5" width="114" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="vXW-gw-cDi"/>
                                                     </constraints>
@@ -692,7 +727,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw It" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS1-y9-WvP">
-                                                    <rect key="frame" x="10.000000000000004" y="5" width="57.333333333333343" height="30"/>
+                                                    <rect key="frame" x="9.9999999999999964" y="5" width="59.666666666666657" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6Ud-TY-jSu"/>
                                                     </constraints>
@@ -716,7 +751,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write It" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hR-p3-lFL">
-                                                    <rect key="frame" x="10.000000000000004" y="5" width="57.333333333333343" height="30"/>
+                                                    <rect key="frame" x="10" y="5" width="63" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="0J7-Y9-7FT"/>
                                                     </constraints>
@@ -740,7 +775,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7I-Vg-YiG">
-                                                    <rect key="frame" x="10" y="5" width="71.666666666666671" height="30"/>
+                                                    <rect key="frame" x="10" y="5" width="73.666666666666671" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Ra5-RN-zcy"/>
                                                     </constraints>

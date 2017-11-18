@@ -89,13 +89,7 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
     }
     
     private func displayDate() {
-        let date = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date)
-        let day = Utils.convertIntegerToDay(components.day!)
-        let monthName = Utils.months[components.month! - 1]
-        let year = components.year!
-        dateLabel.text = "\(day) \(monthName) \(year)"
+        dateLabel.text = Utils.getCurrentDateString()
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {

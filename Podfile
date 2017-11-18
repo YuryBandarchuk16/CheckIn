@@ -15,8 +15,8 @@ target 'MyMood' do
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'NXDrawKit', '~> 0.5.0'
   pod 'RSKImageCropper'  
-  pod 'CVCalendar', '~> 1.6.0'  
-  
+  pod 'RSDayFlow' 
+ 
   target 'MyMoodTests' do
     inherit! :search_paths
   end

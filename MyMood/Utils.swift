@@ -29,6 +29,33 @@ class Utils {
         "December"
     ]
     
+    public static func getCurrentDate(date: Date) -> (year: String, month: String, day: String) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        let day = Utils.convertIntegerToDay(components.day!)
+        let monthName = Utils.months[components.month! - 1]
+        let year = components.year!
+        return (year: String(year), month: String(monthName), day: String(day))
+    }
+    
+    public static func getAnyDateString(date: Date) -> String {
+        let currentDate = Utils.getCurrentDate(date: date)
+        let year = currentDate.year
+        let month = currentDate.month
+        let day = currentDate.day
+        let result = "\(day) \(month) \(year)"
+        return result
+    }
+    
+    public static func getCurrentDateString() -> String {
+        let currentDate = Utils.getCurrentDate(date: Date())
+        let year = currentDate.year
+        let month = currentDate.month
+        let day = currentDate.day
+        let result = "\(day) \(month) \(year)"
+        return result
+    }
+    
     public static func convertIntegerToDay(_ integer: Int) -> String {
         if integer < 10 {
             return "0\(integer)"
