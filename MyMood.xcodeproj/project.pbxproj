@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		45FB466DF9CE0355242BD6DE /* Pods_MyMoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89278F4B07DE7B7B4A330792 /* Pods_MyMoodTests.framework */; };
+		65230C161FB4F58B00282D19 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65230C0C1FB4F57800282D19 /* OFL.txt */; };
+		65230C171FB4F58B00282D19 /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65230C0D1FB4F57900282D19 /* Raleway-ExtraLight.ttf */; };
+		65230C181FB4F58B00282D19 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65230C0E1FB4F57B00282D19 /* Raleway-Medium.ttf */; };
+		65230C191FB4F58B00282D19 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65230C0F1FB4F57D00282D19 /* Raleway-SemiBold.ttf */; };
+		65230C1A1FB4F58B00282D19 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65230C101FB4F57F00282D19 /* Raleway-Light.ttf */; };
+		65230C1B1FB4F58B00282D19 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65230C111FB4F58000282D19 /* Raleway-Thin.ttf */; };
+		65230C1C1FB4F58B00282D19 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65230C121FB4F58200282D19 /* Raleway-Bold.ttf */; };
+		65230C1D1FB4F58B00282D19 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65230C131FB4F58500282D19 /* Raleway-ExtraBold.ttf */; };
+		65230C1E1FB4F58B00282D19 /* Raleway-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65230C141FB4F58600282D19 /* Raleway-Heavy.ttf */; };
+		65230C1F1FB4F58B00282D19 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65230C151FB4F58A00282D19 /* Raleway-Regular.ttf */; };
+		65230C221FB500B600282D19 /* TeacherPickMoodAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65230C211FB500B600282D19 /* TeacherPickMoodAreaViewController.swift */; };
 		656E21F01FA91CCB008F9827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E21EF1FA91CCB008F9827 /* AppDelegate.swift */; };
 		656E21F21FA91CCB008F9827 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E21F11FA91CCB008F9827 /* AuthViewController.swift */; };
 		656E21F51FA91CCB008F9827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656E21F31FA91CCB008F9827 /* Main.storyboard */; };
@@ -20,6 +31,7 @@
 		65C0FE561FA929A100194DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65C0FE551FA929A100194DF7 /* GoogleService-Info.plist */; };
 		65C0FE581FA92B7400194DF7 /* AuthLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FE571FA92B7400194DF7 /* AuthLogic.swift */; };
 		65C0FE5A1FA9EE8700194DF7 /* StudentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FE591FA9EE8700194DF7 /* StudentMainViewController.swift */; };
+		65CF4D441FB505C600DCBAD4 /* ClassPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CF4D431FB505C600DCBAD4 /* ClassPeriodViewController.swift */; };
 		65ECECBE1FAF3431001B164D /* DrawItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ECECBD1FAF3431001B164D /* DrawItViewController.swift */; };
 		E27317AC2A27C1BA5D68F43D /* Pods_MyMoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17CA7EF7BDE6CE9B28ED0A3 /* Pods_MyMoodUITests.framework */; };
 		EDF2EFDDB131613A08B6871C /* Pods_MyMood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3F22D44D3D648FBABE29E9 /* Pods_MyMood.framework */; };
@@ -48,6 +60,17 @@
 		31B1997450F1361234E6797D /* Pods-MyMoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMoodTests/Pods-MyMoodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37BCF7A5C855220D95C9DAD6 /* Pods-MyMood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMood.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMood/Pods-MyMood.release.xcconfig"; sourceTree = "<group>"; };
 		5A3F22D44D3D648FBABE29E9 /* Pods_MyMood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65230C0C1FB4F57800282D19 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		65230C0D1FB4F57900282D19 /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
+		65230C0E1FB4F57B00282D19 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		65230C0F1FB4F57D00282D19 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		65230C101FB4F57F00282D19 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		65230C111FB4F58000282D19 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		65230C121FB4F58200282D19 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		65230C131FB4F58500282D19 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		65230C141FB4F58600282D19 /* Raleway-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Heavy.ttf"; sourceTree = "<group>"; };
+		65230C151FB4F58A00282D19 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		65230C211FB500B600282D19 /* TeacherPickMoodAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPickMoodAreaViewController.swift; sourceTree = "<group>"; };
 		656E21EC1FA91CCB008F9827 /* MyMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656E21EF1FA91CCB008F9827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		656E21F11FA91CCB008F9827 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +89,7 @@
 		65C0FE551FA929A100194DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65C0FE571FA92B7400194DF7 /* AuthLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLogic.swift; sourceTree = "<group>"; };
 		65C0FE591FA9EE8700194DF7 /* StudentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMainViewController.swift; sourceTree = "<group>"; };
+		65CF4D431FB505C600DCBAD4 /* ClassPeriodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPeriodViewController.swift; sourceTree = "<group>"; };
 		65ECECBD1FAF3431001B164D /* DrawItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawItViewController.swift; sourceTree = "<group>"; };
 		7C6889C56DC35026E763A664 /* Pods-MyMoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMoodTests/Pods-MyMoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		89278F4B07DE7B7B4A330792 /* Pods_MyMoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +138,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		65230C0B1FB4F54800282D19 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				65230C0C1FB4F57800282D19 /* OFL.txt */,
+				65230C121FB4F58200282D19 /* Raleway-Bold.ttf */,
+				65230C131FB4F58500282D19 /* Raleway-ExtraBold.ttf */,
+				65230C0D1FB4F57900282D19 /* Raleway-ExtraLight.ttf */,
+				65230C141FB4F58600282D19 /* Raleway-Heavy.ttf */,
+				65230C101FB4F57F00282D19 /* Raleway-Light.ttf */,
+				65230C0E1FB4F57B00282D19 /* Raleway-Medium.ttf */,
+				65230C151FB4F58A00282D19 /* Raleway-Regular.ttf */,
+				65230C0F1FB4F57D00282D19 /* Raleway-SemiBold.ttf */,
+				65230C111FB4F58000282D19 /* Raleway-Thin.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		65230C201FB5007A00282D19 /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				65230C211FB500B600282D19 /* TeacherPickMoodAreaViewController.swift */,
+				65CF4D431FB505C600DCBAD4 /* ClassPeriodViewController.swift */,
+			);
+			path = Teacher;
+			sourceTree = "<group>";
+		};
 		656E21E31FA91CCB008F9827 = {
 			isa = PBXGroup;
 			children = (
@@ -142,11 +192,13 @@
 				65C0FE531FA928C000194DF7 /* Utils.swift */,
 				65C0FE501FA9284B00194DF7 /* Extensions */,
 				65C0FE4F1FA926D700194DF7 /* Student */,
+				65230C201FB5007A00282D19 /* Teacher */,
 				656E21EF1FA91CCB008F9827 /* AppDelegate.swift */,
 				656E21F11FA91CCB008F9827 /* AuthViewController.swift */,
 				65C0FE571FA92B7400194DF7 /* AuthLogic.swift */,
 				656E21F31FA91CCB008F9827 /* Main.storyboard */,
 				656E21F61FA91CCB008F9827 /* Assets.xcassets */,
+				65230C0B1FB4F54800282D19 /* Resources */,
 				656E21F81FA91CCB008F9827 /* LaunchScreen.storyboard */,
 				656E21FB1FA91CCB008F9827 /* Info.plist */,
 				65C0FE551FA929A100194DF7 /* GoogleService-Info.plist */,
@@ -315,8 +367,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65230C1D1FB4F58B00282D19 /* Raleway-ExtraBold.ttf in Resources */,
+				65230C181FB4F58B00282D19 /* Raleway-Medium.ttf in Resources */,
+				65230C191FB4F58B00282D19 /* Raleway-SemiBold.ttf in Resources */,
+				65230C1F1FB4F58B00282D19 /* Raleway-Regular.ttf in Resources */,
+				65230C161FB4F58B00282D19 /* OFL.txt in Resources */,
 				656E21FA1FA91CCB008F9827 /* LaunchScreen.storyboard in Resources */,
+				65230C171FB4F58B00282D19 /* Raleway-ExtraLight.ttf in Resources */,
+				65230C1B1FB4F58B00282D19 /* Raleway-Thin.ttf in Resources */,
 				65C0FE561FA929A100194DF7 /* GoogleService-Info.plist in Resources */,
+				65230C1A1FB4F58B00282D19 /* Raleway-Light.ttf in Resources */,
+				65230C1E1FB4F58B00282D19 /* Raleway-Heavy.ttf in Resources */,
+				65230C1C1FB4F58B00282D19 /* Raleway-Bold.ttf in Resources */,
 				656E21F71FA91CCB008F9827 /* Assets.xcassets in Resources */,
 				656E21F51FA91CCB008F9827 /* Main.storyboard in Resources */,
 			);
@@ -485,8 +547,10 @@
 				65C0FE521FA9285E00194DF7 /* UIViewController+Extension.swift in Sources */,
 				656E21F21FA91CCB008F9827 /* AuthViewController.swift in Sources */,
 				65C0FE581FA92B7400194DF7 /* AuthLogic.swift in Sources */,
+				65230C221FB500B600282D19 /* TeacherPickMoodAreaViewController.swift in Sources */,
 				65C0FE5A1FA9EE8700194DF7 /* StudentMainViewController.swift in Sources */,
 				656E21F01FA91CCB008F9827 /* AppDelegate.swift in Sources */,
+				65CF4D441FB505C600DCBAD4 /* ClassPeriodViewController.swift in Sources */,
 				65C0FE541FA928C000194DF7 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

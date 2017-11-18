@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F8958124FF35274CBCF15AB9A12C4D3A'
+               BlueprintIdentifier = '6C5975F6C7994E41B9C39355409235C5'
                BlueprintName = 'RippleEffectView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'RippleEffectView.framework'>

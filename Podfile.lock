@@ -6,6 +6,7 @@ PODS:
   - BoringSSL/Implementation (9.0):
     - BoringSSL/Interface (= 9.0)
   - BoringSSL/Interface (9.0)
+  - CVCalendar (1.6.0)
   - Firebase/Auth (4.4.0):
     - Firebase/Core
     - FirebaseAuth (= 4.3.0)
@@ -87,6 +88,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - CVCalendar (~> 1.6.0)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -102,6 +104,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BoringSSL: 19083b821ef3ae0f758fae15482e183003b1e265
+  CVCalendar: d6da92b579dfc1e0939e324dfffd2e1045cf69b1
   Firebase: 3e92884a63e8f76d107c43a67d2ab9071e1eda10
   FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
   FirebaseAuth: e0087d479709b20b9613b804704a928d6eafb052
@@ -127,6 +130,6 @@ SPEC CHECKSUMS:
   RxRealm: 9cf5c15c5312fc770aaa542a360cffec4916e63a
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
 
-PODFILE CHECKSUM: 6bb40e56dc3f116e22a8780aabbffda78c75a68c
+PODFILE CHECKSUM: f825b39acd58b5cca407075e2e8facfcb1c9bc26
 
 COCOAPODS: 1.2.1
