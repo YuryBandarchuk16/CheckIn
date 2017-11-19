@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.972886"
+            timestampString = "532824374.686255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "loadClasses()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.973451"
+            timestampString = "532824374.687092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "loadClasses()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.973866"
+            timestampString = "532824374.687761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "loadClasses()"
             landmarkType = "7">
             <Locations>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.974237"
+            timestampString = "532824374.688365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "loadClasses()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.974625"
+            timestampString = "532824374.688992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "loadClasses()"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.974991"
+            timestampString = "532824374.689693"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "loadClasses()"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.975351"
+            timestampString = "532824374.690476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "loadClasses()"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.975926"
+            timestampString = "532824374.691116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "loadClasses()"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.976376"
+            timestampString = "532824374.691705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,12 +250,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyMood/Teacher/ClassPeriodViewController.swift"
-            timestampString = "532816458.976795"
+            timestampString = "532824374.692289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "loadClasses()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyMood/Teacher/CreateClassViewController.swift"
+            timestampString = "532824374.692906"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "createClassButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyMood/Teacher/CreateClassViewController.swift"
+            timestampString = "532824374.692987"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "createClassButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyMood/Teacher/CreateClassViewController.swift"
+            timestampString = "532824374.693053"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "createClassButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

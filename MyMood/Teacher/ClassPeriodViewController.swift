@@ -16,6 +16,8 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var calendarImageView: UIImageView!
     
     public var dateToDisplay: String!
+    
+    private var refreshControl: UIRefreshControl!
 
     private var classNames: Array<String> = Array<String>()
     private var classRefs: Array<DocumentReference> = Array<DocumentReference>()
@@ -36,6 +38,16 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing the class list...")
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc
+    private func refresh(sender: AnyObject) {
+        self.loadClasses()
+        refreshControl.endRefreshing()
     }
     
     private func hideProgressBar() {
@@ -60,6 +72,8 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
     
     private func loadClasses() {
         showProgressBar()
+        self.classRefs = []
+        self.classNames = []
         let storage = Firestore.firestore()
         storage.collection("users").whereField("user_id", isEqualTo: Utils.getUserId()).getDocuments(completion: { (snapshot, error) in
             if let error = error {

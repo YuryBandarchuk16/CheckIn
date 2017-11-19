@@ -192,7 +192,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kMZ-n2-qJA">
-                                <rect key="frame" x="92.666666666666671" y="165" width="190.66666666666663" height="35"/>
+                                <rect key="frame" x="99" y="165" width="179" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="PMi-sN-4xi"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="VVY-i6-Myd"/>
@@ -210,7 +210,7 @@
                                 <color key="onTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher Check In " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DK1-bv-Mvi">
-                                <rect key="frame" x="72.999999999999986" y="727" width="141.66666666666663" height="31"/>
+                                <rect key="frame" x="73" y="727" width="140" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="bj4-xd-6P3"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="rK8-qe-0ft"/>
@@ -223,10 +223,10 @@
                                 <rect key="frame" x="16" y="333" width="343" height="386"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="oQi-hz-vPd">
-                                        <rect key="frame" x="8" y="8" width="88" height="155"/>
+                                        <rect key="frame" x="8" y="8" width="86" height="155"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-zp-6vC">
-                                                <rect key="frame" x="0.0" y="0.0" width="77" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Happy" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -236,7 +236,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wax-ch-z0X">
-                                                <rect key="frame" x="0.0" y="45" width="88" height="20"/>
+                                                <rect key="frame" x="0.0" y="45" width="85" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Hopeful" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,7 +246,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDI-Wu-3uS">
-                                                <rect key="frame" x="0.0" y="90" width="60" height="20"/>
+                                                <rect key="frame" x="0.0" y="90" width="59" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Mad" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,10 +268,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="gSP-1e-NOf">
-                                        <rect key="frame" x="234" y="8" width="101" height="155"/>
+                                        <rect key="frame" x="236" y="8" width="99" height="155"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjE-om-Fh7">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Excited" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -291,7 +291,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaR-Qh-ZQB">
-                                                <rect key="frame" x="0.0" y="90" width="101" height="20"/>
+                                                <rect key="frame" x="0.0" y="90" width="99" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Confused" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -301,7 +301,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jF-M3-eet">
-                                                <rect key="frame" x="0.0" y="135" width="87" height="20"/>
+                                                <rect key="frame" x="0.0" y="135" width="84" height="20"/>
                                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                                 <state key="normal" title=" Worried" image="checkboxbasic">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -555,7 +555,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zs1-zx-vVV">
-                                <rect key="frame" x="0.0" y="205" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="205" width="375" height="557"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classCell" id="jQ2-Wx-IaW">
@@ -584,18 +584,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pull to refresh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UII-oY-d5A">
+                                <rect key="frame" x="16" y="770" width="343" height="42"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="UII-oY-d5A" secondAttribute="bottom" id="2xx-Gm-tzI"/>
                             <constraint firstItem="X0T-Hv-5oH" firstAttribute="trailing" secondItem="eQa-mh-k5J" secondAttribute="trailing" constant="16" id="74A-oX-6Nh"/>
                             <constraint firstItem="Zs1-zx-vVV" firstAttribute="leading" secondItem="X0T-Hv-5oH" secondAttribute="leading" id="9Cw-UG-YWu"/>
+                            <constraint firstItem="X0T-Hv-5oH" firstAttribute="trailing" secondItem="UII-oY-d5A" secondAttribute="trailing" constant="16" id="Cgz-9d-HBW"/>
+                            <constraint firstItem="UII-oY-d5A" firstAttribute="top" secondItem="Zs1-zx-vVV" secondAttribute="bottom" constant="8" id="F9j-eE-A3s"/>
+                            <constraint firstItem="UII-oY-d5A" firstAttribute="leading" secondItem="X0T-Hv-5oH" secondAttribute="leading" constant="16" id="HMc-NZ-FSg"/>
                             <constraint firstItem="JRA-t1-Rto" firstAttribute="top" secondItem="X0T-Hv-5oH" secondAttribute="top" constant="7" id="KcV-Is-eIW"/>
                             <constraint firstItem="Zs1-zx-vVV" firstAttribute="trailing" secondItem="X0T-Hv-5oH" secondAttribute="trailing" id="RRj-xc-kqv"/>
                             <constraint firstItem="eQa-mh-k5J" firstAttribute="centerX" secondItem="X0T-Hv-5oH" secondAttribute="centerX" id="VCs-3h-UvP"/>
                             <constraint firstItem="Zs1-zx-vVV" firstAttribute="top" secondItem="eQa-mh-k5J" secondAttribute="bottom" constant="20" id="XxT-3P-m0v"/>
                             <constraint firstItem="eQa-mh-k5J" firstAttribute="top" secondItem="JRA-t1-Rto" secondAttribute="bottom" constant="20" id="Zmj-sj-tYL"/>
                             <constraint firstItem="JRA-t1-Rto" firstAttribute="centerX" secondItem="X0T-Hv-5oH" secondAttribute="centerX" id="e0N-8i-t6d"/>
-                            <constraint firstAttribute="bottom" secondItem="Zs1-zx-vVV" secondAttribute="bottom" id="jGq-ud-h47"/>
+                            <constraint firstAttribute="bottom" secondItem="Zs1-zx-vVV" secondAttribute="bottom" constant="50" id="jGq-ud-h47"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X0T-Hv-5oH"/>
                     </view>
@@ -686,6 +696,9 @@
                                 <state key="normal" title="Create class!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createClassButtonClicked:" destination="4hv-dn-A6r" eventType="touchUpInside" id="O5r-H1-WJQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -705,6 +718,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UNx-qF-kMT"/>
                     </view>
+                    <connections>
+                        <outlet property="classCodeTextField" destination="35r-oK-0Zb" id="GOb-CL-NWD"/>
+                        <outlet property="classNameTextField" destination="fHI-Nq-A9c" id="Dwq-mk-zn5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApP-Lc-dxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -770,7 +787,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feeling Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg4-N8-G1y">
-                                                    <rect key="frame" x="10" y="5" width="114" height="30"/>
+                                                    <rect key="frame" x="10" y="5" width="105.33333333333333" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="vXW-gw-cDi"/>
                                                     </constraints>
@@ -797,7 +814,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw It" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS1-y9-WvP">
-                                                    <rect key="frame" x="9.9999999999999964" y="5" width="59.666666666666657" height="30"/>
+                                                    <rect key="frame" x="10.000000000000004" y="5" width="57.333333333333343" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6Ud-TY-jSu"/>
                                                     </constraints>
@@ -821,7 +838,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write It" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hR-p3-lFL">
-                                                    <rect key="frame" x="10" y="5" width="63" height="30"/>
+                                                    <rect key="frame" x="10.000000000000004" y="5" width="57.333333333333343" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="0J7-Y9-7FT"/>
                                                     </constraints>
@@ -845,7 +862,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7I-Vg-YiG">
-                                                    <rect key="frame" x="10" y="5" width="73.666666666666671" height="30"/>
+                                                    <rect key="frame" x="10" y="5" width="71.666666666666671" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Ra5-RN-zcy"/>
                                                     </constraints>
