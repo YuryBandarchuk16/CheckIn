@@ -554,14 +554,48 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zs1-zx-vVV">
+                                <rect key="frame" x="0.0" y="193" width="375" height="619"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jQ2-Wx-IaW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jQ2-Wx-IaW" id="cQ0-bH-gY6">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some class name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JFE-31-dgt">
+                                                    <rect key="frame" x="8" y="0.0" width="326" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="xQo-lP-SBO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="JFE-31-dgt" secondAttribute="trailing" constant="8" id="JGb-yc-wbY"/>
+                                                <constraint firstItem="JFE-31-dgt" firstAttribute="leading" secondItem="cQ0-bH-gY6" secondAttribute="leading" constant="8" id="QKV-Rb-wKm"/>
+                                                <constraint firstItem="JFE-31-dgt" firstAttribute="top" secondItem="cQ0-bH-gY6" secondAttribute="top" id="bNN-Hb-THM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="X0T-Hv-5oH" firstAttribute="trailing" secondItem="eQa-mh-k5J" secondAttribute="trailing" constant="16" id="74A-oX-6Nh"/>
+                            <constraint firstItem="Zs1-zx-vVV" firstAttribute="leading" secondItem="X0T-Hv-5oH" secondAttribute="leading" id="9Cw-UG-YWu"/>
                             <constraint firstItem="JRA-t1-Rto" firstAttribute="top" secondItem="X0T-Hv-5oH" secondAttribute="top" constant="7" id="KcV-Is-eIW"/>
+                            <constraint firstItem="Zs1-zx-vVV" firstAttribute="trailing" secondItem="X0T-Hv-5oH" secondAttribute="trailing" id="RRj-xc-kqv"/>
                             <constraint firstItem="eQa-mh-k5J" firstAttribute="centerX" secondItem="X0T-Hv-5oH" secondAttribute="centerX" id="VCs-3h-UvP"/>
+                            <constraint firstItem="Zs1-zx-vVV" firstAttribute="top" secondItem="eQa-mh-k5J" secondAttribute="bottom" constant="8" id="XxT-3P-m0v"/>
                             <constraint firstItem="eQa-mh-k5J" firstAttribute="top" secondItem="JRA-t1-Rto" secondAttribute="bottom" constant="20" id="Zmj-sj-tYL"/>
                             <constraint firstItem="JRA-t1-Rto" firstAttribute="centerX" secondItem="X0T-Hv-5oH" secondAttribute="centerX" id="e0N-8i-t6d"/>
+                            <constraint firstAttribute="bottom" secondItem="Zs1-zx-vVV" secondAttribute="bottom" id="jGq-ud-h47"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X0T-Hv-5oH"/>
                     </view>
@@ -569,6 +603,7 @@
                     <connections>
                         <outlet property="calendarImageView" destination="nQq-Fe-1jx" id="YEu-gz-GE6"/>
                         <outlet property="dateLabel" destination="W3k-gz-qFV" id="O1S-gy-tDU"/>
+                        <outlet property="tableView" destination="Zs1-zx-vVV" id="q10-AR-gM5"/>
                         <segue destination="j4c-LW-a48" kind="show" identifier="showCalendar" id="qpl-wk-QlE"/>
                     </connections>
                 </viewController>
