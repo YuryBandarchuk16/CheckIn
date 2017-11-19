@@ -33,6 +33,9 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         dateToDisplay = Utils.getCurrentDateString()
         setupCalendarTap()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
     }
     
     private func hideProgressBar() {
@@ -145,11 +148,15 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
         return self.classNames.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40.0
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "classCell") else {
             return UITableViewCell()
         }
-        if let label = cell.viewWithTag(102) as? UILabel {
+        if let label = cell.viewWithTag(101) as? UILabel {
             label.text = self.classNames[indexPath.row]
         }
         return cell
@@ -167,6 +174,7 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
     
     private enum Segues: String {
         case showCalendar
+        case showClassStatsSegue
     }
 
 }
