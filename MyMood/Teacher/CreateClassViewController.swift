@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import MBProgressHUD
 
-class CreateClassViewController: UIViewController {
+class CreateClassViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var classNameTextField: UITextField!
@@ -19,6 +19,17 @@ class CreateClassViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        classNameTextField.delegate = self
+        classCodeTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     private func hideProgressBar() {
