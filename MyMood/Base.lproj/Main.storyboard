@@ -445,7 +445,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="uDR-3m-Rqg">
                         <barButtonItem key="backBarButtonItem" title="Back" id="DXM-CY-6zf"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yd5-rP-ft2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yd5-rP-ft2">
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="y0h-bg-2cx" id="wPY-n6-sHk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="anxiousButton" destination="cY8-yc-PcX" id="ceQ-Lq-Twd"/>

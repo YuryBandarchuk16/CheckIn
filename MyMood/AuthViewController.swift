@@ -18,14 +18,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     private var keyboardAdjusted = false
     private var visibleLocation: CGFloat!
     private var lastKeyboardOffset: CGFloat = 0.0
-    private let animationDuration: TimeInterval = 0.5
     private let teachersConfirmationCode = "awchgi"
+    
+    private var allViews: Array<UIView> = Array<UIView>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        findAllViews(self.view)
+        self.view.translatesAutoresizingMaskIntoConstraints = true
         visibleLocation = passwordTextField.frame.origin.y + passwordTextField.bounds.height + 60
         usernameTextField.delegate = self
         passwordTextField.delegate = self
+    }
+    
+    private func findAllViews(_ view: UIView) {
+        allViews.append(view)
+        view.translatesAutoresizingMaskIntoConstraints = true
+        for otherView in view.subviews {
+            findAllViews(otherView)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -161,8 +172,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillShow(_ notification: NSNotification) {
         if keyboardAdjusted == false {
             lastKeyboardOffset = getKeyboardHeight(notification: notification)
-            UIView.animate(withDuration: animationDuration, animations: {
-                self.view.frame.origin.y -= self.lastKeyboardOffset
+            UIView.animate(withDuration: 10.0, animations: {
+               self.view.frame.origin.y -= self.lastKeyboardOffset
             })
             keyboardAdjusted = true
         }
@@ -170,7 +181,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillHide(_ notification: NSNotification) {
         if keyboardAdjusted == true {
-            UIView.animate(withDuration: animationDuration, animations: {
+            UIView.animate(withDuration: 10.0, animations: {
                 self.view.frame.origin.y += self.lastKeyboardOffset
             })
             keyboardAdjusted = false

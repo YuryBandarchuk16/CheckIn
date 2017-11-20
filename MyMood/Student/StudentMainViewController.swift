@@ -186,8 +186,11 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
-        let result: CGFloat = 10
+        let result: CGFloat = keyboardSize.cgRectValue.height - 5
         return result
+    }
+    
+    @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
