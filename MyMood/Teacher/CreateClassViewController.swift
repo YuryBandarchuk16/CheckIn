@@ -14,7 +14,6 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var classNameTextField: UITextField!
-    
     @IBOutlet weak var classCodeTextField: UITextField!
     
     override func viewDidLoad() {

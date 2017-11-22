@@ -64,6 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             Utils.showAlertOnError(title: "Incorrect username", text: "The username you entered contains error, please, try again.", viewController: self)
             return
         }
+        let username = usernameTextField.text!
         let auth = AuthLogic.sharedInstance()
         MBProgressHUD.showAdded(to: self.view, animated: true)
         auth.logInWith(email: email, password: password) { (user, error) in
@@ -92,6 +93,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                 }
                             }
                         }
+                        Utils.setUsername(name: username)
                         var nextSegueId: String = Segues.studentLoginSegue.rawValue
                         if Utils.isCurrentUserAdmin() {
                             nextSegueId = Segues.teacherLoginSegue.rawValue
