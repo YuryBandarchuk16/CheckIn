@@ -244,7 +244,11 @@
                         <viewLayoutGuide key="safeArea" id="ups-j6-LP7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Your classes" id="EG2-Ii-4Hr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VhZ-oQ-5iU"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VhZ-oQ-5iU">
+                            <connections>
+                                <action selector="addNewClassButtonClicked:" destination="Gha-AN-3K4" id="jLR-hh-qIf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="L7I-dm-HT8" id="Avc-eV-CH1"/>
@@ -310,7 +314,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kMZ-n2-qJA">
-                                <rect key="frame" x="99" y="165" width="179" height="35"/>
+                                <rect key="frame" x="98.666666666666686" y="165" width="179" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="PMi-sN-4xi"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="VVY-i6-Myd"/>

@@ -172,11 +172,6 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        Utils.setCurrentStudentClass(className: self.selectedClassName)
-        Utils.setCurrentStudentClassRef(ref: self.selectedClassRef)
-    }
-    
     override func performSegue(withIdentifier identifier: String, sender: Any?) {
         guard let _ = Utils.getCurrentStudentClassName(),
                 let _ = Utils.getCurrentStudentClassRef()
@@ -212,12 +207,107 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
+    @IBAction func addNewClassButtonClicked(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Join the class", message: "Please, enter the class code you are willing to join", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Submit", style: .default) { (action) in
+            guard let textFields = alertController.textFields else { return }
+            if textFields.count > 0 {
+                let textField = textFields.first!
+                let code = textField.text!
+                self.showProgressBar()
+                let storage = Firestore.firestore()
+                storage.collection("classes").whereField("class_code", isEqualTo: code).getDocuments(completion: { (snapshot, error) in
+                    if error != nil {
+                        self.hideProgressBar()
+                        Utils.showAlertOnError(title: "Error", text: "Unable to find such class. Please, check the class code and try again later.", viewController: self)
+                    } else {
+                        guard let documents = snapshot?.documents
+                            else {
+                                self.hideProgressBar()
+                                Utils.showAlertOnError(title: "Error", text: "Unable to find such class. Please, check the class code and try again later.", viewController: self)
+                                return
+                        }
+                        if documents.count != 1 {
+                            self.hideProgressBar()
+                            Utils.showAlertOnError(title: "Error", text: "Unable to find such class. Please, check the class code and try again later.", viewController: self)
+                            return
+                        }
+                        let classRef = documents.first!.reference
+                        for ref in self.classRefs {
+                            if ref == classRef {
+                                self.hideProgressBar()
+                                Utils.showAlertOnError(title: "Error", text: "You have already joined this class.", viewController: self)
+                                return
+                            }
+                        }
+                        let classStudentsCollectionRef = classRef.collection("class_students")
+                        self.setAsyncTasks(amount: 2, callback: {
+                            self.hideProgressBar()
+                            Utils.showAlertOnError(title: "Success", text: "You have succesfully joined the class", viewController: self)
+                            self.loadClasses()
+                        })
+                        classStudentsCollectionRef.addDocument(data: [
+                            "user_id": Utils.getUserId()
+                        ]) { err in
+                            if err != nil {
+                                self.hideProgressBar()
+                                Utils.showAlertOnError(title: "Error", text: "There is an error occured. Please, try again later.", viewController: self)
+                                self.asyncTasks = 0
+                                return
+                            } else {
+                                self.oneAsyncTaskDone()
+                            }
+                        }
+                        // TODO
+                        storage.collection("users").whereField("user_id", isEqualTo: Utils.getUserId()).getDocuments(completion: { (snapshot, error) in
+                            if let error = error {
+                                self.hideProgressBar()
+                                Utils.showAlertOnError(title: "Error", text: error.localizedDescription, viewController: self)
+                            } else {
+                                var ref: DocumentReference?
+                                for document in snapshot!.documents {
+                                    let data = document.data()
+                                    guard let userId = data["user_id"] as? String
+                                        else { return }
+                                    if userId == Utils.getUserId() {
+                                        ref = document.reference
+                                    }
+                                }
+                                if let docRef = ref {
+                                    docRef.collection("my_classes").addDocument(data: [
+                                        "class_id": classRef.documentID
+                                        ], completion: { (error) in
+                                            if error != nil {
+                                                self.hideProgressBar()
+                                                Utils.showAlertOnError(title: "Error", text: "There is an error occured. Please, try again later.", viewController: self)
+                                                self.asyncTasks = 0
+                                            } else {
+                                                self.oneAsyncTaskDone()
+                                            }
+                                    })
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+        }
+        alertController.addAction(alertAction)
+        alertController.addTextField { (textField) in
+            textField.placeholder = ""
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if classSubmitted[indexPath.row] {
             tableView.deselectRow(at: indexPath, animated: true)
         } else {
             self.selectedClassName = classNames[indexPath.row]
             self.selectedClassRef = classRefs[indexPath.row]
+            Utils.setCurrentStudentClass(className: self.selectedClassName)
+            Utils.setCurrentStudentClassRef(ref: self.selectedClassRef)
             self.performSegue(withIdentifier: Segues.submitResponse.rawValue, sender: self)
             tableView.deselectRow(at: indexPath, animated: true)
         }
