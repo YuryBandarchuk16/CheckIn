@@ -65,7 +65,7 @@ class Utils {
     }
     
     public static func getUserTodayResponseName() -> String {
-        return Utils.currentUsername + "_" + Utils.getCurrentDateStringWithoutSpaces()
+        return Utils.currentUserId + "_" + Utils.getCurrentDateStringWithoutSpaces()
     }
     
     public static func getCurrentDate(date: Date) -> (year: String, month: String, day: String) {

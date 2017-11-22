@@ -234,7 +234,7 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
                         }
                         let classRef = documents.first!.reference
                         for ref in self.classRefs {
-                            if ref == classRef {
+                            if ref.documentID == classRef.documentID {
                                 self.hideProgressBar()
                                 Utils.showAlertOnError(title: "Error", text: "You have already joined this class.", viewController: self)
                                 return
