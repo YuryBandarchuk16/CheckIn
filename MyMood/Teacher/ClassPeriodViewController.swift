@@ -120,6 +120,10 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                                 return
                             }
                             for document in snapshot!.documents {
+                                if (!document.exists) {
+                                    self.oneAsyncTaskDone()
+                                    continue
+                                }
                                 let data = document.data()
                                 guard let classId = data["class_id"] as? String
                                     else { return }
@@ -129,6 +133,9 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                                     if error != nil {
                                         return
                                     } else {
+                                        if (!document!.exists) {
+                                            self.oneAsyncTaskDone()
+                                        }
                                         guard let data = document?.data(),
                                             let className = data["class_name"] as? String
                                             else { return }

@@ -51,6 +51,10 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+    
     private func loadClasses() {
         showProgressBar()
         var newClassNames: Array<String> = Array<String>()
@@ -102,17 +106,38 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
                                         self.oneAsyncTaskDone()
                                         return
                                     } else {
+                                        if (!document!.exists) {
+                                            self.oneAsyncTaskDone()
+                                            return
+                                        }
                                         guard let data = document?.data(),
                                             let className = data["class_name"] as? String
                                             else { self.hideProgressBar(); return }
                                         print("YO, \(className)")
+                                        if className == "Sample Class A" {
+                                            print("HELLO!")
+                                        }
                                         currentClassResponsesRef.getDocument(completion: { (snapshot, error) in
                                             if error != nil {
                                                 self.oneAsyncTaskDone()
                                                 return
                                             }
-                                            guard let data = document?.data()
-                                                else { self.oneAsyncTaskDone(); return }
+                                            if (!document!.exists) {
+                                                newClassCompletion.append(false)
+                                                newClassNames.append(className)
+                                                newClassRefs.append(currentClassRef)
+                                                self.oneAsyncTaskDone()
+                                                return
+                                            }
+                                            if (!snapshot!.exists) {
+                                                newClassCompletion.append(false)
+                                                newClassNames.append(className)
+                                                newClassRefs.append(currentClassRef)
+                                                self.oneAsyncTaskDone()
+                                                return
+                                            }
+                                            guard let data = snapshot?.data()
+                                                else { print("WOW, THAT'S IMPOSSIBLE!"); self.oneAsyncTaskDone(); return }
                                             if let _ = data["response_id"] as? String {
                                                 newClassCompletion.append(true)
                                             } else {

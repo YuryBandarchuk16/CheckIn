@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in StudentClassesViewController.loadClasses():StudentClassesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "document.exists">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ClassPeriodViewController.tableView(_:numberOfRowsInSection:):ClassPeriodViewController.swift">
          <PersistentStrings>
             <PersistentString
