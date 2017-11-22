@@ -162,6 +162,24 @@ class Utils {
         Utils.currentResponses.append(response)
     }
     
+    public static func getResponses() -> Array<Dictionary<String, Any>> {
+        return Utils.currentResponses
+    }
+    
+    public static func getResponsesCount() -> Int {
+        return Utils.currentResponses.count
+    }
+    
+    private static var fullname: String!
+    
+    public static func setFullname(name: String) {
+        Utils.fullname = name
+    }
+    
+    public static func getFullname() -> String {
+        return Utils.fullname
+    }
+    
     public static func showAlertOnError(title: String, text: String, viewController: UIViewController) {
         let alert = UIAlertController(title: title, message: text, preferredStyle: UIAlertControllerStyle.alert)
         let action = UIAlertAction(title: "OK", style: .default) { (alert) in

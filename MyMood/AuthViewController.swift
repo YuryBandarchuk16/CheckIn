@@ -85,9 +85,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             for document in snapshot!.documents {
                                 let data = document.data()
                                 guard let userId = data["user_id"] as? String,
-                                      let isAdmin = data["is_admin"] as? Int
+                                      let isAdmin = data["is_admin"] as? Int,
+                                      let fullname = data["fullname"] as? String
                                     else { return }
                                 Utils.setUserId(id: userId)
+                                Utils.setFullname(name: fullname)
                                 if isAdmin == 1 {
                                     Utils.makeCurrentUserAdmin()
                                 } else {

@@ -39,11 +39,20 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
         setupCalendarTap()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.tableFooterView = UIView()
+        let footerView = UIView()
+        footerView.tintColor = self.view.backgroundColor
+        footerView.backgroundColor = self.view.backgroundColor
+        tableView.tableFooterView = footerView
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Refreshing the class list...")
+        refreshControl.backgroundColor = self.view.backgroundColor
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)
+        tableView.backgroundColor = self.view.backgroundColor
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = self.view.backgroundColor
     }
     
     @objc
@@ -203,7 +212,7 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40.0
+        return 60.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -245,11 +254,16 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                 Utils.createNewResponses()
                 self.setAsyncTasks(amount: students.count, callback: {
                     self.hideProgressBar()
-                    self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
+                    if Utils.getResponsesCount() == 0 {
+                        Utils.showAlertOnError(title: "Information Message", text: "Unfortunately, there are no records on selected date for this class.", viewController: self)
+                    } else {
+                        self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
+                    }
                 })
                 if students.count == 0 {
                     self.hideProgressBar()
-                    self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
+                    Utils.showAlertOnError(title: "Information Message", text: "Unfortunately, there are no records on selected date for this class.", viewController: self)
+                    return
                 }
                 for student in students {
                     let responseKey = "\(student)_\(selectedDate)"

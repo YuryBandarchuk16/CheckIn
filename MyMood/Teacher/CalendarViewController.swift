@@ -21,6 +21,7 @@ class CalendarViewController: UIViewController, RSDFDatePickerViewDelegate, RSDF
         let datePicker = RSDFDatePickerView(frame: self.view.bounds)
         datePicker.delegate = self
         datePicker.dataSource = self
+        datePicker.backgroundColor = self.view.backgroundColor
         self.view.addSubview(datePicker)
     }
     
@@ -30,6 +31,8 @@ class CalendarViewController: UIViewController, RSDFDatePickerViewDelegate, RSDF
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
                 self.navigationController?.popViewController(animated: true)
             })
+        } else {
+            Utils.showAlertOnError(title: "Error", text: "Please, select the date firstly.", viewController: self)
         }
     }
     

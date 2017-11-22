@@ -67,7 +67,8 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
                         var classRef: DocumentReference!
                         classRef = storage.collection("classes").addDocument(data: [
                             "class_code": classCode,
-                            "class_name": className
+                            "class_name": className,
+                            "teacher": Utils.getFullname()
                         ])  { err in
                             if err != nil {
                                 self.hideProgressBar()

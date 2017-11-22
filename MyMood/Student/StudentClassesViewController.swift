@@ -18,6 +18,7 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
     private var classNames: Array<String> = Array<String>()
     private var classRefs: Array<DocumentReference> = Array<DocumentReference>()
     private var classSubmitted: Array<Bool> = Array<Bool>()
+    private var classTeachersNames: Array<String> = Array<String>()
     
     private var selectedClassName: String!
     private var selectedClassRef: DocumentReference!
@@ -30,7 +31,11 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.tableFooterView = UIView()
+        let footerView = UIView()
+        footerView.tintColor = self.view.backgroundColor
+        footerView.backgroundColor = self.view.backgroundColor
+        tableView.tableFooterView = footerView
+        tableView.backgroundColor = self.view.backgroundColor
     }
     
     private func hideProgressBar() {
@@ -55,11 +60,16 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
         return 100.0
     }
     
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = self.view.backgroundColor
+    }
+    
     private func loadClasses() {
         showProgressBar()
         var newClassNames: Array<String> = Array<String>()
         var newClassRefs: Array<DocumentReference> = Array<DocumentReference>()
         var newClassCompletion: Array<Bool> = Array<Bool>()
+        var newClassTeachersNames: Array<String> = Array<String>()
         let storage = Firestore.firestore()
         storage.collection("users").whereField("user_id", isEqualTo: Utils.getUserId()).getDocuments(completion: { (snapshot, error) in
             if let error = error {
@@ -85,6 +95,7 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
                                     self.classRefs = newClassRefs
                                     self.classNames = newClassNames
                                     self.classSubmitted = newClassCompletion
+                                    self.classTeachersNames = newClassTeachersNames
                                     self.tableView.reloadData()
                                     print("RELOADED TABLE VIEW DATA!")
                                     self.hideProgressBar()
@@ -111,7 +122,8 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
                                             return
                                         }
                                         guard let data = document?.data(),
-                                            let className = data["class_name"] as? String
+                                            let className = data["class_name"] as? String,
+                                            let teacher = data["teacher"] as? String
                                             else { self.hideProgressBar(); return }
                                         print("YO, \(className)")
                                         if className == "Sample Class A" {
@@ -126,6 +138,7 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
                                                 newClassCompletion.append(false)
                                                 newClassNames.append(className)
                                                 newClassRefs.append(currentClassRef)
+                                                newClassTeachersNames.append(teacher)
                                                 self.oneAsyncTaskDone()
                                                 return
                                             }
@@ -133,6 +146,7 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
                                                 newClassCompletion.append(false)
                                                 newClassNames.append(className)
                                                 newClassRefs.append(currentClassRef)
+                                                newClassTeachersNames.append(teacher)
                                                 self.oneAsyncTaskDone()
                                                 return
                                             }
@@ -145,6 +159,7 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
                                             }
                                             newClassNames.append(className)
                                             newClassRefs.append(currentClassRef)
+                                            newClassTeachersNames.append(teacher)
                                             self.oneAsyncTaskDone()
                                         })
                                     }
@@ -199,9 +214,15 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
             if let classNameLabel = cell.viewWithTag(102) as? UILabel {
                 classNameLabel.text = classNames[indexPath.row]
             }
+            if let teacherNameLabel = cell.viewWithTag(505) as? UILabel {
+                teacherNameLabel.text = classTeachersNames[indexPath.row]
+            }
         } else {
             if let classNameLabel = cell.viewWithTag(101) as? UILabel {
                 classNameLabel.text = classNames[indexPath.row]
+            }
+            if let teacherNameLabel = cell.viewWithTag(606) as? UILabel {
+                teacherNameLabel.text = classTeachersNames[indexPath.row]
             }
         }
         return cell
