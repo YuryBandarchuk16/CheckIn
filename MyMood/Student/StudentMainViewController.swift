@@ -244,7 +244,7 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
                 let storage = Firestore.firestore()
                 let responseRef = storage.collection("responses").addDocument(data: [
                     "feelingWord": feelingWord,
-                    "image_id": "",
+                    "image_id": imagePath,
                     "text": text,
                     "value": happinessValue
                 ]) { (error) in
@@ -263,10 +263,10 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
                         "response_id": responseRef.documentID
                     ]) { error in
                         self.hideProgressBar()
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
                             Utils.justSavedResponse()
                             self.navigationController?.popViewController(animated: true)
-                        }
+                        })
                     }
                 }
             }
@@ -293,10 +293,10 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
                     "response_id": responseRef.documentID
                 ]) { error in
                     self.hideProgressBar()
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
                         Utils.justSavedResponse()
                         self.navigationController?.popViewController(animated: true)
-                    }
+                    })
                 }
             }
         }
