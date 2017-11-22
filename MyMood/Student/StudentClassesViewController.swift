@@ -175,6 +175,15 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         cell.isUserInteractionEnabled = intercationEnabled
+        if intercationEnabled {
+            if let classNameLabel = cell.viewWithTag(102) as? UILabel {
+                classNameLabel.text = classNames[indexPath.row]
+            }
+        } else {
+            if let classNameLabel = cell.viewWithTag(101) as? UILabel {
+                classNameLabel.text = classNames[indexPath.row]
+            }
+        }
         return cell
     }
     
