@@ -11,6 +11,8 @@ target 'MyMood' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'UIImage+ImageCompress'
   pod 'RippleEffectView'
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'NXDrawKit', '~> 0.5.0'

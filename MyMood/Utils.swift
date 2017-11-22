@@ -86,6 +86,18 @@ class Utils {
         return result
     }
     
+    private static var responseJustSaved: Bool = false
+    
+    public static func justSavedResponse() {
+        Utils.responseJustSaved = true
+    }
+    
+    public static func getResponseJustSaved() -> Bool {
+        let result = Utils.responseJustSaved
+        Utils.responseJustSaved = false
+        return result
+    }
+    
     public static func getCurrentDateString() -> String {
         let currentDate = Utils.getCurrentDate(date: Date())
         let year = currentDate.year

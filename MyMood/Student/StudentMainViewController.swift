@@ -9,10 +9,15 @@
 import UIKit
 import Firebase
 import Foundation
+import FirebaseStorage
+import MBProgressHUD
+import UIImage_ImageCompress
 
 class StudentMainViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var dateLabel: UILabel!
+    
+    private let maxImageSize: Double = 1.02 // in MB
     
     private var keyboardAdjusted = false
     private var visibleLocation: CGFloat!
@@ -35,6 +40,7 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var happyImageView: UIImageView!
     
     private var currentButtonMask: Int = 0
+    private var sliderValue: Float = 0.5
     
     @IBOutlet weak var happyButton: UIButton! // 0th
     @IBOutlet weak var hopefulButton: UIButton! // 1st
@@ -115,6 +121,7 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func sliderValueUpdated(_ sender: UISlider) {
         let currentValue = sender.value
+        self.sliderValue = sender.value
         if currentValue <= 0.35 {
             sadImageView.image = sadImageColored
             smileImageView.image = smileImage
@@ -190,7 +197,109 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
         return result
     }
     
+    private func hideProgressBar() {
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+    }
+    
+    private func showProgressBar() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+    }
+    
     @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
+        self.showProgressBar()
+        var image = self.drawItImageView.image
+        if image != nil {
+            if let uploadData = UIImagePNGRepresentation(image!) {
+                let array = [UInt8](uploadData)
+                let size: Double = Double(array.count) / Double(1024.0)
+                let compressRatio = min(Float(1.0), Float(self.maxImageSize / size))
+                if abs(compressRatio - 1.0) > 1e-7 {
+                    image = UIImage.compressImage(image!, compressRatio: CGFloat(compressRatio))
+                }
+            }
+        }
+        let happinessValue = self.sliderValue
+        let textUnwrapped = self.writeItTextView.text
+        var text = ""
+        if let goodText = textUnwrapped {
+            text = goodText
+        }
+        let feelingWord = self.currentButtonMask
+        var failed: Bool = false
+        if image != nil {
+            let imageStorage = Storage.storage()
+            let imagePath = Utils.getUserTodayResponseName() + "_" +  Utils.getCurrentStudentClassName()!
+            let imageRef = imageStorage.reference().child("images/\(imagePath)")
+            let imageData = UIImagePNGRepresentation(image!)!
+            _ = imageRef.putData(imageData, metadata: nil) { (metadata, error) in
+                guard metadata != nil
+                    else {
+                        failed = true
+                        self.hideProgressBar()
+                        Utils.showAlertOnError(title: "Error", text: "Error occured while uploading a photo", viewController: self)
+                        return
+                }
+                let storage = Firestore.firestore()
+                let responseRef = storage.collection("responses").addDocument(data: [
+                    "feelingWord": feelingWord,
+                    "image_id": "",
+                    "text": text,
+                    "value": happinessValue
+                ]) { (error) in
+                    self.hideProgressBar()
+                    if error != nil {
+                        failed = true
+                        Utils.showAlertOnError(title: "Error", text: "Error saving you response. Please, try again later.", viewController: self)
+                    } else {
+                        Utils.showAlertOnError(title: "Success", text: "Your response has been successfully saved!", viewController: self)
+                    }
+                }
+                if failed == false {
+                    self.showProgressBar()
+                    let classRef = Utils.getCurrentStudentClassRef()!
+                    classRef.collection("responses").document(Utils.getUserTodayResponseName()).setData([
+                        "response_id": responseRef.documentID
+                    ]) { error in
+                        self.hideProgressBar()
+                        DispatchQueue.main.async {
+                            Utils.justSavedResponse()
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                }
+            }
+        } else {
+            let storage = Firestore.firestore()
+            let responseRef = storage.collection("responses").addDocument(data: [
+                "feelingWord": feelingWord,
+                "image_id": "",
+                "text": text,
+                "value": happinessValue
+            ]) { (error) in
+                self.hideProgressBar()
+                if error != nil {
+                    failed = true
+                    Utils.showAlertOnError(title: "Error", text: "Error saving you response. Please, try again later.", viewController: self)
+                } else {
+                    Utils.showAlertOnError(title: "Success", text: "Your response has been successfully saved!", viewController: self)
+                }
+            }
+            if failed == false {
+                self.showProgressBar()
+                let classRef = Utils.getCurrentStudentClassRef()!
+                classRef.collection("responses").document(Utils.getUserTodayResponseName()).setData([
+                    "response_id": responseRef.documentID
+                ]) { error in
+                    self.hideProgressBar()
+                    DispatchQueue.main.async {
+                        Utils.justSavedResponse()
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

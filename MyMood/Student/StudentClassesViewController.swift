@@ -45,7 +45,7 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if (!classesLoaded) {
+        if (!classesLoaded || Utils.getResponseJustSaved()) {
             loadClasses()
             classesLoaded = true
         }

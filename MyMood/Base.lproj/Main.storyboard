@@ -314,7 +314,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kMZ-n2-qJA">
-                                <rect key="frame" x="98.666666666666686" y="165" width="179" height="35"/>
+                                <rect key="frame" x="99" y="165" width="179" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="PMi-sN-4xi"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="VVY-i6-Myd"/>
