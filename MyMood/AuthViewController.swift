@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var fullNameTextField: UITextField!
     
     private var keyboardAdjusted = false
     private var visibleLocation: CGFloat!
@@ -30,6 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         visibleLocation = passwordTextField.frame.origin.y + passwordTextField.bounds.height + 60
         usernameTextField.delegate = self
         passwordTextField.delegate = self
+        fullNameTextField.delegate = self
     }
     
     private func findAllViews(_ view: UIView) {
@@ -106,6 +108,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signUpButtonClicked(_ sender: Any) {
+        guard let fullname = fullNameTextField.text
+            else {
+                Utils.showAlertOnError(title: "Error", text: "Full Name could not be empty!", viewController: self)
+                return
+        }
+        if fullname.characters.count < 2 {
+            Utils.showAlertOnError(title: "Error", text: "Full Name is too short", viewController: self)
+            return
+        }
         let email = (usernameTextField.text ?? "") + "@mymoodapp.com"
         let password = (passwordTextField.text ?? "")
         if (!Utils.isValidEmail(email: email)) {
@@ -151,7 +162,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         let storage = Firestore.firestore()
                         let currentUserData: [String: Any] = [
                             "user_id": user.uid,
-                            "is_admin": 1
+                            "is_admin": 1,
+                            "fullname": self.fullNameTextField.text!
                         ]
                         storage.collection("users").addDocument(data: currentUserData) { error in
                             self.hideProgressBar()
@@ -170,8 +182,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     private func registerStudent(email: String, password: String, code: String) {
-        if code.lowercased() != self.teachersConfirmationCode {
-            Utils.showAlertOnError(title: "Error", text: "Teacher's confirmation code is incorrect.", viewController: self)
+        if code.lowercased() != self.studentsConfirmationCode {
+            Utils.showAlertOnError(title: "Error", text: "Student's confirmation code is incorrect.", viewController: self)
         } else {
             let auth = AuthLogic.sharedInstance()
             MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -184,7 +196,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         let storage = Firestore.firestore()
                         let currentUserData: [String: Any] = [
                             "user_id": user.uid,
-                            "is_admin": 0
+                            "is_admin": 0,
+                            "fullname": self.fullNameTextField.text!
                         ]
                         storage.collection("users").addDocument(data: currentUserData) { error in
                             self.hideProgressBar()

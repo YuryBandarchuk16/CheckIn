@@ -246,7 +246,8 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
                     "feelingWord": feelingWord,
                     "image_id": imagePath,
                     "text": text,
-                    "value": happinessValue
+                    "value": happinessValue,
+                    "tin": self.teacherCheckInSwitch.isOn
                 ]) { (error) in
                     self.hideProgressBar()
                     if error != nil {
@@ -276,7 +277,8 @@ class StudentMainViewController: UIViewController, UITextViewDelegate {
                 "feelingWord": feelingWord,
                 "image_id": "",
                 "text": text,
-                "value": happinessValue
+                "value": happinessValue,
+                "tin": self.teacherCheckInSwitch.isOn
             ]) { (error) in
                 self.hideProgressBar()
                 if error != nil {
