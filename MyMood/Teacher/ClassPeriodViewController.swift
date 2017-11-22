@@ -135,6 +135,7 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                                     } else {
                                         if (!document!.exists) {
                                             self.oneAsyncTaskDone()
+                                            return
                                         }
                                         guard let data = document?.data(),
                                             let className = data["class_name"] as? String
@@ -151,6 +152,19 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                 }
             }
         })
+    }
+    
+    private func getSelectedDateWithoutSpaces() -> String {
+        var result: String = ""
+        for character in self.dateToDisplay.characters {
+            if character == " " {
+                continue
+            } else {
+                result.append(character)
+            }
+        }
+        print("Date built: \(result)")
+        return result
     }
     
     private var asyncTasks: Int = 0
@@ -202,7 +216,70 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
+    private func loadResponsesForClass(classRef: DocumentReference) {
+        self.showProgressBar()
+        let storage = Firestore.firestore()
+        var students: Array<String> = Array<String>()
+        classRef.collection("class_students").getDocuments { (snapshot, error) in
+            if error != nil {
+                self.hideProgressBar()
+                Utils.showAlertOnError(title: "Error", text: "Error occured when loading class students.", viewController: self)
+                return
+            } else {
+                guard let documents = snapshot?.documents
+                    else {
+                        self.hideProgressBar()
+                        Utils.showAlertOnError(title: "Error", text: "Error occured when loading class students.", viewController: self)
+                        return
+                }
+                for document in documents {
+                    if (!document.exists) {
+                        continue
+                    }
+                    let data = document.data()
+                    guard let studentId = data["user_id"] as? String
+                        else { continue }
+                    students.append(studentId)
+                }
+                let selectedDate = self.getSelectedDateWithoutSpaces()
+                Utils.createNewResponses()
+                self.setAsyncTasks(amount: students.count, callback: {
+                    self.hideProgressBar()
+                    self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
+                })
+                if students.count == 0 {
+                    self.hideProgressBar()
+                    self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
+                }
+                for student in students {
+                    let responseKey = "\(student)_\(selectedDate)"
+                    classRef.collection("responses").document(responseKey).getDocument(completion: { (resultDocument, error) in
+                        if error != nil {
+                            self.oneAsyncTaskDone()
+                            return
+                        } else {
+                            guard let doc = resultDocument
+                                else {
+                                    self.oneAsyncTaskDone()
+                                    return
+                            }
+                            if (!doc.exists) {
+                                self.oneAsyncTaskDone()
+                                return
+                            }
+                            Utils.addNewResponse(response: doc.data())
+                            print("LOOOOK!");
+                            print(doc.data())
+                            self.oneAsyncTaskDone()
+                        }
+                    })
+                }
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.loadResponsesForClass(classRef: classRefs[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

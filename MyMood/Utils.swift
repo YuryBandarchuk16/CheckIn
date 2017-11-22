@@ -152,6 +152,16 @@ class Utils {
         return emailTest.evaluate(with: email)
     }
     
+    private static var currentResponses: Array<Dictionary<String, Any>> = Array<Dictionary<String, Any>>()
+    
+    public static func createNewResponses() {
+        Utils.currentResponses = Array<Dictionary<String, Any>>()
+    }
+    
+    public static func addNewResponse(response: Dictionary<String, Any>) {
+        Utils.currentResponses.append(response)
+    }
+    
     public static func showAlertOnError(title: String, text: String, viewController: UIViewController) {
         let alert = UIAlertController(title: title, message: text, preferredStyle: UIAlertControllerStyle.alert)
         let action = UIAlertAction(title: "OK", style: .default) { (alert) in
