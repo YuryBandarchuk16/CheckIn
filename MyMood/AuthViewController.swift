@@ -18,7 +18,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     private var keyboardAdjusted = false
     private var visibleLocation: CGFloat!
     private var lastKeyboardOffset: CGFloat = 0.0
-    private let teachersConfirmationCode = "awchgi"
+    private let teachersConfirmationCode = "iamnotstudent"
+    private let studentsConfirmationCode = "student"
     
     private var allViews: Array<UIView> = Array<UIView>()
     
@@ -109,12 +110,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
             Utils.showAlertOnError(title: "Incorrect username", text: "The username you entered contains error, please, try again.", viewController: self)
             return
         }
-        let alertController = UIAlertController(title: "Teacher confirmation", message: "Please, enter the teacher's access code", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Confirmation", message: "Please, enter the teacher/student's access code", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Submit", style: .default) { (action) in
             guard let textFields = alertController.textFields else { return }
             if textFields.count > 0 {
                 let textField = textFields.first!
-                self.registerTeacher(email: email, password: password, code: textField.text!)
+                let code = textField.text!.lowercased()
+                if code != self.teachersConfirmationCode && code != self.studentsConfirmationCode {
+                    Utils.showAlertOnError(title: "Error", text: "Confirmation code is incorrect.", viewController: self)
+                } else {
+                    if code == self.teachersConfirmationCode {
+                        self.registerTeacher(email: email, password: password, code: code)
+                    } else if code == self.studentsConfirmationCode {
+                        self.registerStudent(email: email, password: password, code: code)
+                    }
+                }
             }
         }
         alertController.addAction(alertAction)
@@ -140,6 +150,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         let currentUserData: [String: Any] = [
                             "user_id": user.uid,
                             "is_admin": 1
+                        ]
+                        storage.collection("users").addDocument(data: currentUserData) { error in
+                            self.hideProgressBar()
+                            if let error = error {
+                                Utils.showAlertOnError(title: "Error", text: error.localizedDescription, viewController: self)
+                            } else {
+                                Utils.showAlertOnError(title: "Success", text: "Your account has been created! You can now sign in using specified credentials.", viewController: self)
+                            }
+                        }
+                        print("User created with id: \(user.uid)")
+                    }
+                }
+            })
+        }
+    }
+    
+    
+    private func registerStudent(email: String, password: String, code: String) {
+        if code.lowercased() != self.teachersConfirmationCode {
+            Utils.showAlertOnError(title: "Error", text: "Teacher's confirmation code is incorrect.", viewController: self)
+        } else {
+            let auth = AuthLogic.sharedInstance()
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            auth.registerWith(email: email, password: password, returnCallBack: { (user, error) in
+                if let error = error {
+                    self.hideProgressBar()
+                    Utils.showAlertOnError(title: "Error", text: error.localizedDescription, viewController: self)
+                } else {
+                    if let user = user {
+                        let storage = Firestore.firestore()
+                        let currentUserData: [String: Any] = [
+                            "user_id": user.uid,
+                            "is_admin": 0
                         ]
                         storage.collection("users").addDocument(data: currentUserData) { error in
                             self.hideProgressBar()

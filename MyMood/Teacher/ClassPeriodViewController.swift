@@ -24,6 +24,8 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var isRefreshControlActive: Bool = false
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if dateToDisplay != nil {
@@ -46,8 +48,11 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
     
     @objc
     private func refresh(sender: AnyObject) {
+        print("STARTED")
+        isRefreshControlActive = true
         self.loadClasses()
-        refreshControl.endRefreshing()
+        print("LOADED!")
+        print("ENDED!")
     }
     
     private func hideProgressBar() {
@@ -72,8 +77,8 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
     
     private func loadClasses() {
         showProgressBar()
-        self.classRefs = []
-        self.classNames = []
+        var newClassNames: Array<String> = Array<String>()
+        var newClassRefs: Array<DocumentReference> = Array<DocumentReference>()
         let storage = Firestore.firestore()
         storage.collection("users").whereField("user_id", isEqualTo: Utils.getUserId()).getDocuments(completion: { (snapshot, error) in
             if let error = error {
@@ -96,10 +101,24 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                         } else {
                             self.setAsyncTasks(amount: snapshot!.documents.count, callback: {
                                 DispatchQueue.main.async {
+                                    self.classRefs = newClassRefs
+                                    self.classNames = newClassNames
                                     self.tableView.reloadData()
+                                    print("RELOADED TABLE VIEW DATA!")
                                     self.hideProgressBar()
+                                    if self.isRefreshControlActive {
+                                        self.refreshControl.endRefreshing()
+                                        self.isRefreshControlActive = false
+                                    }
                                 }
                             })
+                            if snapshot!.documents.count == 0 {
+                                self.hideProgressBar()
+                                if self.isRefreshControlActive {
+                                    self.refreshControl.endRefreshing()
+                                }
+                                return
+                            }
                             for document in snapshot!.documents {
                                 let data = document.data()
                                 guard let classId = data["class_id"] as? String
@@ -114,8 +133,8 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                                             let className = data["class_name"] as? String
                                             else { return }
                                         print("YO, \(className)")
-                                        self.classNames.append(className)
-                                        self.classRefs.append(currentClassRef)
+                                        newClassNames.append(className)
+                                        newClassRefs.append(currentClassRef)
                                         self.oneAsyncTaskDone()
                                     }
                                 })

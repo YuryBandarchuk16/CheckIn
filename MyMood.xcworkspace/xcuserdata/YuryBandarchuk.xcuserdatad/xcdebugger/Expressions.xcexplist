@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ClassPeriodViewController.tableView(_:numberOfRowsInSection:):ClassPeriodViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.classNames.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
