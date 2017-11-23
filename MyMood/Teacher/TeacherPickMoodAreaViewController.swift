@@ -100,6 +100,8 @@ class TeacherPickMoodAreaViewController: UIViewController, UITableViewDelegate, 
             self.performSegue(withIdentifier: Segues.checkInSegue.rawValue, sender: self)
         } else if indexPath.row == 2 {
             self.performSegue(withIdentifier: Segues.showImages.rawValue, sender: self)
+        } else if indexPath.row == 1 {
+            self.performSegue(withIdentifier: Segues.feelingWordSegue.rawValue, sender: self)
         }
     }
     
@@ -108,6 +110,7 @@ class TeacherPickMoodAreaViewController: UIViewController, UITableViewDelegate, 
         case textInfo
         case checkInSegue
         case showImages
+        case feelingWordSegue
     }
 
 }

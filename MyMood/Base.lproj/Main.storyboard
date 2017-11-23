@@ -1097,7 +1097,7 @@
                         <segue destination="tIn-GY-KWq" kind="show" identifier="textInfo" id="W7q-Bv-mex"/>
                         <segue destination="6k3-y0-zQQ" kind="show" identifier="checkInSegue" id="hds-8l-M1E"/>
                         <segue destination="uRc-au-obv" kind="show" identifier="showImages" id="SyI-eH-gct"/>
-                        <segue destination="NTb-Wg-vsD" kind="show" id="taQ-QB-IoJ"/>
+                        <segue destination="NTb-Wg-vsD" kind="show" identifier="feelingWordSegue" id="taQ-QB-IoJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhG-po-c67" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1175,7 +1175,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9C-8q-rjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4240.8000000000002" y="332.38380809595208"/>
+            <point key="canvasLocation" x="4582" y="-167"/>
         </scene>
         <!--Feeling Word-->
         <scene sceneID="wrg-53-2On">
@@ -1242,7 +1242,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Feeling Word" id="KO1-0B-9TI"/>
                     <connections>
-                        <segue destination="qMX-Q1-1r2" kind="show" id="ELC-zD-dpC"/>
+                        <segue destination="qMX-Q1-1r2" kind="show" identifier="showDetail" id="ELC-zD-dpC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQp-n5-fmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
