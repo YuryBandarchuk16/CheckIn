@@ -346,6 +346,7 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Utils.teacherClassName = "\(classNames[indexPath.row])+\(indexPath.row)+\(self.dateToDisplay)"
         self.loadResponsesForClass(classRef: classRefs[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }

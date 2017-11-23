@@ -907,7 +907,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApP-Lc-dxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2864.8000000000002" y="1511.8226600985222"/>
+            <point key="canvasLocation" x="2866" y="1683"/>
         </scene>
         <!--Teacher Pick Mood Area View Controller-->
         <scene sceneID="kS8-o6-kGQ">
@@ -1096,6 +1096,7 @@
                         <segue destination="G2d-pl-3jk" kind="show" identifier="showValues" id="KEb-OM-mg9"/>
                         <segue destination="tIn-GY-KWq" kind="show" identifier="textInfo" id="W7q-Bv-mex"/>
                         <segue destination="6k3-y0-zQQ" kind="show" identifier="checkInSegue" id="hds-8l-M1E"/>
+                        <segue destination="uRc-au-obv" kind="show" identifier="showImages" id="SyI-eH-gct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhG-po-c67" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1216,7 +1217,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnw-6e-thm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3936.8000000000002" y="1687.1064467766118"/>
+            <point key="canvasLocation" x="3794" y="1919"/>
         </scene>
         <!--Write It-->
         <scene sceneID="acw-my-jBJ">
@@ -1307,6 +1308,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAN-5O-c58" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5925.6000000000004" y="1215.7421289355323"/>
+        </scene>
+        <!--Draw It-->
+        <scene sceneID="UQe-XW-484">
+            <objects>
+                <tableViewController id="uRc-au-obv" customClass="DrawItTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uq6-Hw-G6W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="150" id="RT8-j0-iKp">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RT8-j0-iKp" id="TpM-RI-vZN">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="149.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Db5-RK-dbw">
+                                            <rect key="frame" x="8" y="8" width="101" height="133.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alex Richter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UI-X2-zjI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="33.5"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="Wi3-Wg-JMO">
+                                                    <rect key="frame" x="0.0" y="33.5" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="MMX-CV-fhp"/>
+                                                        <constraint firstAttribute="height" constant="100" id="VTr-nr-43m"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Db5-RK-dbw" firstAttribute="leading" secondItem="TpM-RI-vZN" secondAttribute="leading" constant="8" id="G2s-Ev-p8e"/>
+                                        <constraint firstAttribute="bottom" secondItem="Db5-RK-dbw" secondAttribute="bottom" constant="8" id="Wd0-T0-dCX"/>
+                                        <constraint firstItem="Db5-RK-dbw" firstAttribute="top" secondItem="TpM-RI-vZN" secondAttribute="top" constant="8" id="izr-8t-CPK"/>
+                                        <constraint firstAttribute="trailing" secondItem="Db5-RK-dbw" secondAttribute="trailing" constant="233" id="yWt-HX-VyM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uRc-au-obv" id="dBm-OJ-QKr"/>
+                            <outlet property="delegate" destination="uRc-au-obv" id="Mc0-if-B0x"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Draw It" id="A9m-zZ-0Qe"/>
+                    <connections>
+                        <segue destination="j6m-OI-1I1" kind="show" identifier="detailedImage" id="mvS-Sb-XCB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpO-F0-XxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5223" y="2132"/>
+        </scene>
+        <!--Detailed Image-->
+        <scene sceneID="Q0P-f4-yhw">
+            <objects>
+                <viewController id="j6m-OI-1I1" customClass="ShowImageViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="con-8h-I84">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="Odc-4W-EPo">
+                                <rect key="frame" x="67" y="215.5" width="240" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="7qq-ww-SMY"/>
+                                    <constraint firstAttribute="height" constant="300" id="gOM-Py-6a3"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Odc-4W-EPo" firstAttribute="centerX" secondItem="ho7-tu-1VA" secondAttribute="centerX" id="5tw-iE-9Kg"/>
+                            <constraint firstItem="Odc-4W-EPo" firstAttribute="centerY" secondItem="ho7-tu-1VA" secondAttribute="centerY" id="jie-vM-pRS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ho7-tu-1VA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detailed Image" id="Vah-2F-Qj8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4NY-DK-Px9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6779" y="2009"/>
         </scene>
     </scenes>
     <resources>

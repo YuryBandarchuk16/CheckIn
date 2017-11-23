@@ -175,6 +175,18 @@ class Utils {
     
     public static var loadedResponses: Array<Dictionary<String, Any>> = Array<Dictionary<String, Any>>()
     
+    private static var photos: Dictionary<String, Dictionary<String, Data>> = Dictionary<String, Dictionary<String, Data>>()
+    
+    public static func addPhotosForClass(className: String, dict: Dictionary<String, Data>) {
+        photos[className] = dict
+    }
+    
+    public static func getPhotosByClass(className: String) -> Dictionary<String, Data>? {
+        return photos[className]
+    }
+    
+    public static var teacherClassName: String! = "Error"
+    
     private static var fullname: String!
     
     public static func setFullname(name: String) {
