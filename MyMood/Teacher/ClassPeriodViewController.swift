@@ -225,9 +225,60 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
+    private func prepareResponseData() {
+        let responses = Utils.getResponses()
+        var ids: Array<String> = Array<String>()
+        for response in responses {
+            guard let id = response["response_id"] as? String
+                else { continue }
+            ids.append(id)
+        }
+        if ids.count == 0 {
+            self.hideProgressBar()
+            Utils.showAlertOnError(title: "Information Message", text: "Unfortunately, there are no records on selected date for this class.", viewController: self)
+            return
+        }
+        self.hideProgressBar()
+        Utils.showAlertOnError(title: "Information Message", text: "Please, wait a second while loading all the responses", viewController: self)
+        self.showProgressBar()
+        self.setAsyncTasks(amount: ids.count) {
+            self.hideProgressBar()
+            if Utils.loadedResponses.count == 0 || Utils.count == 0.0 {
+                Utils.showAlertOnError(title: "Information Message", text: "Unfortunately, there are no records on selected date for this class or some error occured. Please, try again later.", viewController: self)
+                return
+            }
+            self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
+        }
+        let storage = Firestore.firestore()
+        Utils.sumValues = 0.0
+        Utils.count = 0.0
+        Utils.loadedResponses = Array<Dictionary<String, Any>>()
+        for id in ids {
+            storage.collection("responses").document(id).getDocument(completion: { (snapshot, error) in
+                if error != nil || snapshot == nil {
+                    self.oneAsyncTaskDone()
+                } else {
+                    let doc = snapshot!
+                    if (!doc.exists) {
+                        self.oneAsyncTaskDone()
+                    } else {
+                        let data = doc.data()
+                        guard let value = data["value"] as? Double
+                            else {
+                                self.oneAsyncTaskDone()
+                                return
+                        }
+                        Utils.count += 1.0
+                        Utils.sumValues += value
+                        Utils.loadedResponses.append(data)
+                    }
+                }
+            })
+        }
+    }
+    
     private func loadResponsesForClass(classRef: DocumentReference) {
         self.showProgressBar()
-        let storage = Firestore.firestore()
         var students: Array<String> = Array<String>()
         classRef.collection("class_students").getDocuments { (snapshot, error) in
             if error != nil {
@@ -253,11 +304,11 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                 let selectedDate = self.getSelectedDateWithoutSpaces()
                 Utils.createNewResponses()
                 self.setAsyncTasks(amount: students.count, callback: {
-                    self.hideProgressBar()
                     if Utils.getResponsesCount() == 0 {
+                        self.hideProgressBar()
                         Utils.showAlertOnError(title: "Information Message", text: "Unfortunately, there are no records on selected date for this class.", viewController: self)
                     } else {
-                        self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
+                        self.prepareResponseData()
                     }
                 })
                 if students.count == 0 {

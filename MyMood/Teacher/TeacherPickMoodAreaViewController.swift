@@ -10,14 +10,66 @@ import UIKit
 
 class TeacherPickMoodAreaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let titles = ["Feeling Word", "Draw It", "Write It", "Check In"]
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sadImageView: UIImageView!
+    @IBOutlet weak var smileImageView: UIImageView!
+    @IBOutlet weak var happyImageView: UIImageView!
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+    private var sadImage: UIImage!
+    private var sadImageColored: UIImage!
+    
+    private var smileImage: UIImage!
+    private var smileImageColored: UIImage!
+    
+    private var happyImage: UIImage!
+    private var happyImageColored: UIImage!
+    
+    let titles = ["Happiness rating", "Feeling Word", "Draw It", "Write It", "Check In"]
+    
+    private var sliderValueForever: Float!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        slider.value = Float(Utils.sumValues / Utils.count)
+        sliderValueForever = slider.value
+        tableView.tableFooterView = UIView()
+        setupEmojiImages()
+        setCorrectImageForSlider()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    private func setupEmojiImages() {
+        sadImage = UIImage(named: "sad")
+        sadImageColored = UIImage(named: "sad_colored")
+        smileImage = UIImage(named: "smile")
+        smileImageColored = UIImage(named: "smile_colored")
+        happyImage = UIImage(named: "happy")
+        happyImageColored = UIImage(named: "happy_colored")
+    }
+    
+    private func setCorrectImageForSlider() {
+        let currentValue = self.slider.value
+        if currentValue <= 0.35 {
+            sadImageView.image = sadImageColored
+            smileImageView.image = smileImage
+            happyImageView.image = happyImage
+        } else if (currentValue > 0.35 && currentValue <= 0.75) {
+            sadImageView.image = sadImage
+            smileImageView.image = smileImageColored
+            happyImageView.image = happyImage
+        } else if currentValue > 0.75 {
+            sadImageView.image = sadImage
+            smileImageView.image = smileImage
+            happyImageView.image = happyImageColored
+        }
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        sender.value = self.sliderValueForever
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,13 +82,16 @@ class TeacherPickMoodAreaViewController: UIViewController, UITableViewDelegate, 
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titles.count
     }
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

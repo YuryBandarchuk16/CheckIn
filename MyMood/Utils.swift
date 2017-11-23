@@ -170,6 +170,11 @@ class Utils {
         return Utils.currentResponses.count
     }
     
+    public static var sumValues: Double = 0.0
+    public static var count: Double = 0.0
+    
+    public static var loadedResponses: Array<Dictionary<String, Any>> = Array<Dictionary<String, Any>>()
+    
     private static var fullname: String!
     
     public static func setFullname(name: String) {
