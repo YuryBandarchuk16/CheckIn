@@ -239,7 +239,7 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
             return
         }
         self.hideProgressBar()
-        Utils.showAlertOnError(title: "Information Message", text: "Please, wait a second while loading all the responses", viewController: self)
+        Utils.showAlertOnError(title: "Information Message", text: "Please, wait a second while loading all the responses...", viewController: self)
         self.showProgressBar()
         self.setAsyncTasks(amount: ids.count) {
             self.hideProgressBar()
@@ -247,7 +247,9 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                 Utils.showAlertOnError(title: "Information Message", text: "Unfortunately, there are no records on selected date for this class or some error occured. Please, try again later.", viewController: self)
                 return
             }
-            self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
+            })
         }
         let storage = Firestore.firestore()
         Utils.sumValues = 0.0
@@ -271,6 +273,7 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
                         Utils.count += 1.0
                         Utils.sumValues += value
                         Utils.loadedResponses.append(data)
+                        self.oneAsyncTaskDone()
                     }
                 }
             })

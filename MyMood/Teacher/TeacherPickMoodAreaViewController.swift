@@ -92,6 +92,13 @@ class TeacherPickMoodAreaViewController: UIViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0 {
+            self.performSegue(withIdentifier: Segues.showValues.rawValue, sender: self)
+        }
+    }
+    
+    private enum Segues: String {
+        case showValues
     }
 
 }
