@@ -96,12 +96,15 @@ class TeacherPickMoodAreaViewController: UIViewController, UITableViewDelegate, 
             self.performSegue(withIdentifier: Segues.showValues.rawValue, sender: self)
         } else if indexPath.row == 3 {
             self.performSegue(withIdentifier: Segues.textInfo.rawValue, sender: self)
+        } else if indexPath.row == 4 {
+            self.performSegue(withIdentifier: Segues.checkInSegue.rawValue, sender: self)
         }
     }
     
     private enum Segues: String {
         case showValues
         case textInfo
+        case checkInSegue
     }
 
 }

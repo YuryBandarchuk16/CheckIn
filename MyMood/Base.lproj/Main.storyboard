@@ -1095,6 +1095,7 @@
                         <outlet property="tableView" destination="DIH-Cb-y4K" id="5Fq-oO-Mgc"/>
                         <segue destination="G2d-pl-3jk" kind="show" identifier="showValues" id="KEb-OM-mg9"/>
                         <segue destination="tIn-GY-KWq" kind="show" identifier="textInfo" id="W7q-Bv-mex"/>
+                        <segue destination="6k3-y0-zQQ" kind="show" identifier="checkInSegue" id="hds-8l-M1E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhG-po-c67" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1173,6 +1174,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9C-8q-rjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4240.8000000000002" y="332.38380809595208"/>
+        </scene>
+        <!--Students asked for check-in-->
+        <scene sceneID="Sht-fV-8KS">
+            <objects>
+                <tableViewController id="6k3-y0-zQQ" customClass="CheckInStudentsTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T1P-0q-8xu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkInCell" rowHeight="50" id="JUF-FZ-zIc">
+                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JUF-FZ-zIc" id="9gw-9V-W1K">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="35" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alexndra Richter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBf-bq-0jS">
+                                            <rect key="frame" x="8" y="8" width="359" height="34"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mBf-bq-0jS" firstAttribute="top" secondItem="9gw-9V-W1K" secondAttribute="top" constant="8" id="BVN-Kt-iAd"/>
+                                        <constraint firstAttribute="trailing" secondItem="mBf-bq-0jS" secondAttribute="trailing" constant="8" id="Bs8-YG-He6"/>
+                                        <constraint firstAttribute="bottom" secondItem="mBf-bq-0jS" secondAttribute="bottom" constant="7.5" id="Cdy-nq-bin"/>
+                                        <constraint firstItem="mBf-bq-0jS" firstAttribute="leading" secondItem="9gw-9V-W1K" secondAttribute="leading" constant="8" id="lNO-YD-ZM4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6k3-y0-zQQ" id="kqR-0j-Eqc"/>
+                            <outlet property="delegate" destination="6k3-y0-zQQ" id="2ce-TJ-chx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Students asked for check-in" id="eYx-T4-Epc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lnw-6e-thm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3936.8000000000002" y="1687.1064467766118"/>
         </scene>
         <!--Write It-->
         <scene sceneID="acw-my-jBJ">
