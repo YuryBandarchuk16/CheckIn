@@ -23,6 +23,7 @@
 		652521B51FC37A61001F9A55 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652521B41FC37A61001F9A55 /* KeyboardLayoutConstraint.swift */; };
 		6536C8BF1FC58A60000B9F57 /* StudentClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536C8BE1FC58A60000B9F57 /* StudentClassesViewController.swift */; };
 		6550FA4D1FC2274400C23D76 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6550FA4C1FC2274400C23D76 /* CreateClassViewController.swift */; };
+		656A1FE51FC71638008FD628 /* HappinessRatingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A1FE41FC71638008FD628 /* HappinessRatingsTableViewController.swift */; };
 		656E21F01FA91CCB008F9827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E21EF1FA91CCB008F9827 /* AppDelegate.swift */; };
 		656E21F21FA91CCB008F9827 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E21F11FA91CCB008F9827 /* AuthViewController.swift */; };
 		656E21F51FA91CCB008F9827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656E21F31FA91CCB008F9827 /* Main.storyboard */; };
@@ -79,6 +80,7 @@
 		652521B41FC37A61001F9A55 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		6536C8BE1FC58A60000B9F57 /* StudentClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassesViewController.swift; sourceTree = "<group>"; };
 		6550FA4C1FC2274400C23D76 /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
+		656A1FE41FC71638008FD628 /* HappinessRatingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappinessRatingsTableViewController.swift; sourceTree = "<group>"; };
 		656E21EC1FA91CCB008F9827 /* MyMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656E21EF1FA91CCB008F9827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		656E21F11FA91CCB008F9827 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -166,12 +168,21 @@
 		65230C201FB5007A00282D19 /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				656A1FE31FC71617008FD628 /* DisplayingData */,
 				65230C211FB500B600282D19 /* TeacherPickMoodAreaViewController.swift */,
 				65CF4D431FB505C600DCBAD4 /* ClassPeriodViewController.swift */,
 				65197A071FC0A2BF0065C045 /* CalendarViewController.swift */,
 				6550FA4C1FC2274400C23D76 /* CreateClassViewController.swift */,
 			);
 			path = Teacher;
+			sourceTree = "<group>";
+		};
+		656A1FE31FC71617008FD628 /* DisplayingData */ = {
+			isa = PBXGroup;
+			children = (
+				656A1FE41FC71638008FD628 /* HappinessRatingsTableViewController.swift */,
+			);
+			path = DisplayingData;
 			sourceTree = "<group>";
 		};
 		656E21E31FA91CCB008F9827 = {
@@ -561,6 +572,7 @@
 				6550FA4D1FC2274400C23D76 /* CreateClassViewController.swift in Sources */,
 				656E21F21FA91CCB008F9827 /* AuthViewController.swift in Sources */,
 				652521B51FC37A61001F9A55 /* KeyboardLayoutConstraint.swift in Sources */,
+				656A1FE51FC71638008FD628 /* HappinessRatingsTableViewController.swift in Sources */,
 				65C0FE581FA92B7400194DF7 /* AuthLogic.swift in Sources */,
 				65230C221FB500B600282D19 /* TeacherPickMoodAreaViewController.swift in Sources */,
 				6536C8BF1FC58A60000B9F57 /* StudentClassesViewController.swift in Sources */,

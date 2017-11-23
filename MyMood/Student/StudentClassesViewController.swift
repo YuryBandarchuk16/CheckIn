@@ -215,14 +215,14 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
                 classNameLabel.text = classNames[indexPath.row]
             }
             if let teacherNameLabel = cell.viewWithTag(505) as? UILabel {
-                teacherNameLabel.text = classTeachersNames[indexPath.row]
+                teacherNameLabel.text = "Teacher: \(classTeachersNames[indexPath.row])"
             }
         } else {
             if let classNameLabel = cell.viewWithTag(101) as? UILabel {
                 classNameLabel.text = classNames[indexPath.row]
             }
             if let teacherNameLabel = cell.viewWithTag(606) as? UILabel {
-                teacherNameLabel.text = classTeachersNames[indexPath.row]
+                teacherNameLabel.text = "Teacher: \(classTeachersNames[indexPath.row])"
             }
         }
         return cell
