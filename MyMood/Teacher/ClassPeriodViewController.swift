@@ -238,16 +238,15 @@ class ClassPeriodViewController: UIViewController, UITableViewDataSource, UITabl
             Utils.showAlertOnError(title: "Information Message", text: "Unfortunately, there are no records on selected date for this class.", viewController: self)
             return
         }
-        self.hideProgressBar()
-        Utils.showAlertOnError(title: "Information Message", text: "Please, wait a second while loading all the responses...", viewController: self)
-        self.showProgressBar()
         self.setAsyncTasks(amount: ids.count) {
-            self.hideProgressBar()
+            DispatchQueue.main.async {
+                self.hideProgressBar()
+            }
             if Utils.loadedResponses.count == 0 || Utils.count == 0.0 {
                 Utils.showAlertOnError(title: "Information Message", text: "Unfortunately, there are no records on selected date for this class or some error occured. Please, try again later.", viewController: self)
                 return
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.performSegue(withIdentifier: Segues.showClassStatsSegue.rawValue, sender: self)
             })
         }
