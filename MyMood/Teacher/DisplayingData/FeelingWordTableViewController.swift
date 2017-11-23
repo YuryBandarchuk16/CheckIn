@@ -91,5 +91,13 @@ class FeelingWordTableViewController: UITableViewController {
         }
         self.performSegue(withIdentifier: "showDetail", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let destinationViewController = segue.destination as? ShowDetailForWordTableViewController {
+                destinationViewController.data = dataToPass
+            }
+        }
+    }
 
 }
