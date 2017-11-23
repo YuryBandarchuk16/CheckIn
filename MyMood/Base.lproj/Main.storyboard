@@ -1104,7 +1104,7 @@
         <!--Happiness ratings-->
         <scene sceneID="WXe-li-gWr">
             <objects>
-                <tableViewController id="G2d-pl-3jk" sceneMemberID="viewController">
+                <tableViewController id="G2d-pl-3jk" customClass="HappinessRatingsTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lI1-ov-6KC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1177,42 +1177,42 @@
         <!--Write It-->
         <scene sceneID="acw-my-jBJ">
             <objects>
-                <tableViewController id="tIn-GY-KWq" sceneMemberID="viewController">
+                <tableViewController id="tIn-GY-KWq" customClass="WriteItTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c8R-Ud-1ID">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="7NL-qf-bi7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="textCell" rowHeight="80" id="7NL-qf-bi7">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7NL-qf-bi7" id="p5F-HY-1dj">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="78" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some text info will go here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1XT-hh-pGv">
-                                            <rect key="frame" x="8" y="34.5" width="326" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="O14-CP-1qD"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="77" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viktoriia Erokhina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JOg-1U-lR6">
                                             <rect key="frame" x="8" y="8" width="326" height="22.5"/>
                                             <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="78" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some text info will go here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XT-hh-pGv">
+                                            <rect key="frame" x="8" y="35.5" width="326" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="5Sn-wA-nnz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="1XT-hh-pGv" secondAttribute="bottom" constant="5" id="4rP-ID-cDC"/>
-                                        <constraint firstItem="JOg-1U-lR6" firstAttribute="top" secondItem="p5F-HY-1dj" secondAttribute="topMargin" id="5Le-ki-Fda"/>
-                                        <constraint firstAttribute="trailing" secondItem="1XT-hh-pGv" secondAttribute="trailing" constant="8" id="C9u-hf-6FQ"/>
-                                        <constraint firstItem="JOg-1U-lR6" firstAttribute="leading" secondItem="p5F-HY-1dj" secondAttribute="leadingMargin" id="bCE-6B-KnM"/>
-                                        <constraint firstItem="1XT-hh-pGv" firstAttribute="leading" secondItem="p5F-HY-1dj" secondAttribute="leading" constant="8" id="dhu-2r-Lay"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="JOg-1U-lR6" secondAttribute="trailing" id="tq9-MZ-mfg"/>
+                                        <constraint firstItem="1XT-hh-pGv" firstAttribute="top" secondItem="JOg-1U-lR6" secondAttribute="bottom" constant="5" id="7De-mg-gaI"/>
+                                        <constraint firstItem="1XT-hh-pGv" firstAttribute="trailing" secondItem="p5F-HY-1dj" secondAttribute="trailingMargin" id="NMR-M5-xRT"/>
+                                        <constraint firstItem="JOg-1U-lR6" firstAttribute="trailing" secondItem="p5F-HY-1dj" secondAttribute="trailingMargin" id="fUZ-eO-9Vg"/>
+                                        <constraint firstItem="JOg-1U-lR6" firstAttribute="leading" secondItem="p5F-HY-1dj" secondAttribute="leadingMargin" id="mAl-zf-l9c"/>
+                                        <constraint firstItem="JOg-1U-lR6" firstAttribute="top" secondItem="p5F-HY-1dj" secondAttribute="topMargin" id="t6g-WV-imp"/>
+                                        <constraint firstItem="1XT-hh-pGv" firstAttribute="leading" secondItem="p5F-HY-1dj" secondAttribute="leadingMargin" id="x3u-d3-Ygv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1223,10 +1223,46 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Write It" id="IS2-XA-0sS"/>
+                    <connections>
+                        <segue destination="1vi-Yq-0Cb" kind="show" identifier="showText" id="lbY-Ta-Cjo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymx-VQ-ua7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4952.8000000000002" y="1215.7421289355323"/>
+        </scene>
+        <!--Show Text View Controller-->
+        <scene sceneID="omu-cs-8t1">
+            <objects>
+                <viewController id="1vi-Yq-0Cb" customClass="ShowTextViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lgG-1O-Gop">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mqz-ff-sdQ">
+                                <rect key="frame" x="3" y="64" width="369" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mqz-ff-sdQ" firstAttribute="leading" secondItem="XeW-B1-Ebr" secondAttribute="leading" constant="3" id="O1G-x6-8pz"/>
+                            <constraint firstAttribute="bottom" secondItem="mqz-ff-sdQ" secondAttribute="bottom" id="Ywp-tg-pau"/>
+                            <constraint firstItem="mqz-ff-sdQ" firstAttribute="top" secondItem="XeW-B1-Ebr" secondAttribute="top" id="mNc-dx-g6j"/>
+                            <constraint firstItem="XeW-B1-Ebr" firstAttribute="trailing" secondItem="mqz-ff-sdQ" secondAttribute="trailing" constant="3" id="yGZ-Tj-tRy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XeW-B1-Ebr"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="mqz-ff-sdQ" id="Z72-iV-xmZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAN-5O-c58" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5925.6000000000004" y="1215.7421289355323"/>
         </scene>
     </scenes>
     <resources>
