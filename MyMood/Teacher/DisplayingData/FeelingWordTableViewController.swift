@@ -52,9 +52,23 @@ class FeelingWordTableViewController: UITableViewController {
             return self.students.count
         }
     }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 10.0
+        } else {
+            return 0.0
+        }
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        var cell: UITableViewCell
+        
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath)
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
+        }
 
         var value = self.feelingWords[indexPath.row]
         if indexPath.section == 1 {
