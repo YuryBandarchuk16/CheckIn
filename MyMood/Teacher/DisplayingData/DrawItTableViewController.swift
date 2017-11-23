@@ -68,6 +68,9 @@ class DrawItTableViewController: UITableViewController {
             }
             if imageIds.count == 0 {
                 self.hideProgressBar()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 return
             }
             let storage = Storage.storage()
@@ -87,7 +90,9 @@ class DrawItTableViewController: UITableViewController {
                 }
                 self.imageData = newData
                 self.hideProgressBar()
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 var got: [String: Data] = [String: Data]()
                 for i in 0..<self.names.count {
                     got[self.names[i]] = self.imageData[i]
@@ -124,7 +129,7 @@ class DrawItTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if names.count == 0 {
+        if names.count == 0 && self.needToLoadData == false {
             TableViewHelper.EmptyMessage(message: "No students have uploaded photos", viewController: self)
             return 0
         } else {
@@ -155,7 +160,7 @@ class DrawItTableViewController: UITableViewController {
     
     private var dataToPass: Data!
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.dataToPass = self.imageData[indexPath.row]
         self.performSegue(withIdentifier: Segues.detailedImage.rawValue, sender: self)
