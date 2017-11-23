@@ -36,6 +36,7 @@
 		65AE587D1FC7495100744811 /* CheckInStudentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AE587C1FC7495100744811 /* CheckInStudentsTableViewController.swift */; };
 		65AE587F1FC754AB00744811 /* DrawItTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AE587E1FC754AB00744811 /* DrawItTableViewController.swift */; };
 		65AE58811FC75B2300744811 /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AE58801FC75B2300744811 /* ShowImageViewController.swift */; };
+		65AE58831FC7630B00744811 /* FeelingWordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AE58821FC7630B00744811 /* FeelingWordTableViewController.swift */; };
 		65C0FE521FA9285E00194DF7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FE511FA9285E00194DF7 /* UIViewController+Extension.swift */; };
 		65C0FE541FA928C000194DF7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0FE531FA928C000194DF7 /* Utils.swift */; };
 		65C0FE561FA929A100194DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65C0FE551FA929A100194DF7 /* GoogleService-Info.plist */; };
@@ -104,6 +105,7 @@
 		65AE587C1FC7495100744811 /* CheckInStudentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInStudentsTableViewController.swift; sourceTree = "<group>"; };
 		65AE587E1FC754AB00744811 /* DrawItTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawItTableViewController.swift; sourceTree = "<group>"; };
 		65AE58801FC75B2300744811 /* ShowImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
+		65AE58821FC7630B00744811 /* FeelingWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingWordTableViewController.swift; sourceTree = "<group>"; };
 		65C0FE511FA9285E00194DF7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		65C0FE531FA928C000194DF7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		65C0FE551FA929A100194DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				65AE587C1FC7495100744811 /* CheckInStudentsTableViewController.swift */,
 				65AE587E1FC754AB00744811 /* DrawItTableViewController.swift */,
 				65AE58801FC75B2300744811 /* ShowImageViewController.swift */,
+				65AE58821FC7630B00744811 /* FeelingWordTableViewController.swift */,
 			);
 			path = DisplayingData;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				656A1FE51FC71638008FD628 /* HappinessRatingsTableViewController.swift in Sources */,
 				65C0FE581FA92B7400194DF7 /* AuthLogic.swift in Sources */,
 				65230C221FB500B600282D19 /* TeacherPickMoodAreaViewController.swift in Sources */,
+				65AE58831FC7630B00744811 /* FeelingWordTableViewController.swift in Sources */,
 				6536C8BF1FC58A60000B9F57 /* StudentClassesViewController.swift in Sources */,
 				65AE587D1FC7495100744811 /* CheckInStudentsTableViewController.swift in Sources */,
 				65AE58811FC75B2300744811 /* ShowImageViewController.swift in Sources */,
