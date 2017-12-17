@@ -188,9 +188,11 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        guard let _ = Utils.getCurrentStudentClassName(),
-                let _ = Utils.getCurrentStudentClassRef()
+        if (identifier != "playGame") {
+            guard let _ = Utils.getCurrentStudentClassName(),
+                    let _ = Utils.getCurrentStudentClassRef()
             else { return }
+        }
         super.performSegue(withIdentifier: identifier, sender: sender)
     }
     

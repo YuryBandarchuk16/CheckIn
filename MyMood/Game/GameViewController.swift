@@ -38,7 +38,9 @@ class GameViewController: UIViewController {
         scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
         
-        level = Level(filename: "Level_3")
+        let randomNum: UInt32 = arc4random_uniform(100) % 5
+        
+        level = Level(filename: "Level_\(randomNum)")
         scene.level = level
         scene.addTiles()
         scene.swipeHandler = handleSwipe

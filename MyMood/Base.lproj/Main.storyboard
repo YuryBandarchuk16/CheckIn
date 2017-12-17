@@ -322,7 +322,7 @@
                     <connections>
                         <outlet property="tableView" destination="L7I-dm-HT8" id="Avc-eV-CH1"/>
                         <segue destination="y0h-bg-2cx" kind="show" identifier="submitResponse" id="Wzs-ms-8ip"/>
-                        <segue destination="LzQ-bp-Yzn" kind="show" identifier="playGame" id="1P4-UQ-pTU"/>
+                        <segue destination="LzQ-bp-Yzn" kind="show" identifier="playGame" id="4bD-XI-Tjl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waD-TX-bOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
