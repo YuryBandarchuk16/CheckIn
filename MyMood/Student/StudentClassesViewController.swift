@@ -202,7 +202,7 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
         var identifier: String!
         var intercationEnabled: Bool!
         if classSubmitted[indexPath.row] {
-            intercationEnabled = false
+            intercationEnabled = true
             identifier = ReusableIdentifiers.studentClassCellDone.rawValue
         } else {
             intercationEnabled = true
@@ -324,6 +324,7 @@ class StudentClassesViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if classSubmitted[indexPath.row] {
             tableView.deselectRow(at: indexPath, animated: true)
+            self.performSegue(withIdentifier: "playGame", sender: self)
         } else {
             self.selectedClassName = classNames[indexPath.row]
             self.selectedClassRef = classRefs[indexPath.row]

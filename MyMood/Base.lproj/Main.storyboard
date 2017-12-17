@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -33,7 +34,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,10 +164,25 @@
             </objects>
             <point key="canvasLocation" x="1049" y="-241"/>
         </scene>
+        <!--Game View Controller-->
+        <scene sceneID="DJK-Vf-PDl">
+            <objects>
+                <viewController id="LzQ-bp-Yzn" customClass="GameViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eQl-K7-WOg" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="6FW-1E-HwP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jn7-8j-dVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2833" y="-1355"/>
+        </scene>
         <!--Your classes-->
         <scene sceneID="69F-YR-2Rb">
             <objects>
-                <viewController id="Gha-AN-3K4" customClass="StudentClassesViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gha-AN-3K4" customClass="StudentClassesViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zee-Hv-M5n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -306,16 +322,17 @@
                     <connections>
                         <outlet property="tableView" destination="L7I-dm-HT8" id="Avc-eV-CH1"/>
                         <segue destination="y0h-bg-2cx" kind="show" identifier="submitResponse" id="Wzs-ms-8ip"/>
+                        <segue destination="LzQ-bp-Yzn" kind="show" identifier="playGame" id="1P4-UQ-pTU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waD-TX-bOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="-375.36945812807886"/>
+            <point key="canvasLocation" x="1836" y="-914"/>
         </scene>
         <!--Student Main View Controller-->
         <scene sceneID="Tk4-YI-gfb">
             <objects>
-                <viewController id="y0h-bg-2cx" customClass="StudentMainViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="y0h-bg-2cx" customClass="StudentMainViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bsL-i0-2B3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -654,7 +671,7 @@
         <!--Draw It-->
         <scene sceneID="KW0-31-I5j">
             <objects>
-                <viewController id="PgI-YQ-Jbo" customClass="DrawItViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PgI-YQ-Jbo" customClass="DrawItViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pT9-0J-mEL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -692,7 +709,7 @@
         <!--Your classes-->
         <scene sceneID="MSd-Ep-2d8">
             <objects>
-                <viewController id="nDI-yR-ziz" customClass="ClassPeriodViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nDI-yR-ziz" customClass="ClassPeriodViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wys-L1-fpn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -813,7 +830,7 @@
         <!--Calendar-->
         <scene sceneID="p56-XW-xhG">
             <objects>
-                <viewController id="j4c-LW-a48" customClass="CalendarViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j4c-LW-a48" customClass="CalendarViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xC5-FT-2Yz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -835,7 +852,7 @@
         <!--Create Class View Controller-->
         <scene sceneID="pl3-LF-dhM">
             <objects>
-                <viewController id="4hv-dn-A6r" customClass="CreateClassViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4hv-dn-A6r" customClass="CreateClassViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34z-Fi-Gye">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -912,7 +929,7 @@
         <!--Teacher Pick Mood Area View Controller-->
         <scene sceneID="kS8-o6-kGQ">
             <objects>
-                <viewController id="oDL-Xa-52N" customClass="TeacherPickMoodAreaViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oDL-Xa-52N" customClass="TeacherPickMoodAreaViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xCE-Ir-3zB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1107,7 +1124,7 @@
         <!--Happiness ratings-->
         <scene sceneID="WXe-li-gWr">
             <objects>
-                <tableViewController id="G2d-pl-3jk" customClass="HappinessRatingsTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="G2d-pl-3jk" customClass="HappinessRatingsTableViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lI1-ov-6KC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1180,7 +1197,7 @@
         <!--Feeling Word-->
         <scene sceneID="wrg-53-2On">
             <objects>
-                <tableViewController id="NTb-Wg-vsD" customClass="FeelingWordTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NTb-Wg-vsD" customClass="FeelingWordTableViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xyi-mA-FIu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1252,7 +1269,7 @@
         <!--Details-->
         <scene sceneID="Fat-Ow-fch">
             <objects>
-                <tableViewController id="qMX-Q1-1r2" customClass="ShowDetailForWordTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qMX-Q1-1r2" customClass="ShowDetailForWordTableViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HFQ-fr-rRu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1297,7 +1314,7 @@
         <!--Students asked for check-in-->
         <scene sceneID="Sht-fV-8KS">
             <objects>
-                <tableViewController id="6k3-y0-zQQ" customClass="CheckInStudentsTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6k3-y0-zQQ" customClass="CheckInStudentsTableViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T1P-0q-8xu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1340,7 +1357,7 @@
         <!--Write It-->
         <scene sceneID="acw-my-jBJ">
             <objects>
-                <tableViewController id="tIn-GY-KWq" customClass="WriteItTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tIn-GY-KWq" customClass="WriteItTableViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c8R-Ud-1ID">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1397,7 +1414,7 @@
         <!--Show Text View Controller-->
         <scene sceneID="omu-cs-8t1">
             <objects>
-                <viewController id="1vi-Yq-0Cb" customClass="ShowTextViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1vi-Yq-0Cb" customClass="ShowTextViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lgG-1O-Gop">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1430,7 +1447,7 @@
         <!--Draw It-->
         <scene sceneID="UQe-XW-484">
             <objects>
-                <tableViewController id="uRc-au-obv" customClass="DrawItTableViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="uRc-au-obv" customClass="DrawItTableViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uq6-Hw-G6W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1488,7 +1505,7 @@
         <!--Detailed Image-->
         <scene sceneID="Q0P-f4-yhw">
             <objects>
-                <viewController id="j6m-OI-1I1" customClass="ShowImageViewController" customModule="MyMood" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j6m-OI-1I1" customClass="ShowImageViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="con-8h-I84">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
