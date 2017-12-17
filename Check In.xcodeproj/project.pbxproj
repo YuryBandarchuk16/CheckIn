@@ -32,6 +32,18 @@
 		656E21FA1FA91CCB008F9827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656E21F81FA91CCB008F9827 /* LaunchScreen.storyboard */; };
 		656E22051FA91CCC008F9827 /* MyMoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E22041FA91CCC008F9827 /* MyMoodTests.swift */; };
 		656E22101FA91CCC008F9827 /* MyMoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E220F1FA91CCC008F9827 /* MyMoodUITests.swift */; };
+		658FBE631FE67964001B65A1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658FBE621FE67964001B65A1 /* GameViewController.swift */; };
+		658FBE651FE67986001B65A1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658FBE641FE67986001B65A1 /* GameScene.swift */; };
+		658FBE671FE679A3001B65A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658FBE661FE679A3001B65A1 /* Extensions.swift */; };
+		658FBE6A1FE679C5001B65A1 /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658FBE691FE679C5001B65A1 /* Swap.swift */; };
+		658FBE6C1FE679E2001B65A1 /* Cookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658FBE6B1FE679E2001B65A1 /* Cookie.swift */; };
+		658FBE6E1FE679F9001B65A1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658FBE6D1FE679F9001B65A1 /* Level.swift */; };
+		658FBE701FE67A16001B65A1 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658FBE6F1FE67A16001B65A1 /* Array2D.swift */; };
+		658FBE721FE67A27001B65A1 /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658FBE711FE67A27001B65A1 /* Pair.swift */; };
+		658FBE741FE67A48001B65A1 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658FBE731FE67A48001B65A1 /* Tile.swift */; };
+		658FBE781FE67A80001B65A1 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 658FBE751FE67A80001B65A1 /* Sounds */; };
+		658FBE791FE67A80001B65A1 /* Levels in Resources */ = {isa = PBXBuildFile; fileRef = 658FBE761FE67A80001B65A1 /* Levels */; };
+		658FBE7A1FE67A80001B65A1 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 658FBE771FE67A80001B65A1 /* Sprites.atlas */; };
 		65AE58791FC722A200744811 /* ShowTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AE58781FC722A200744811 /* ShowTextViewController.swift */; };
 		65AE587B1FC7234D00744811 /* WriteItTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AE587A1FC7234D00744811 /* WriteItTableViewController.swift */; };
 		65AE587D1FC7495100744811 /* CheckInStudentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AE587C1FC7495100744811 /* CheckInStudentsTableViewController.swift */; };
@@ -72,6 +84,7 @@
 		31B1997450F1361234E6797D /* Pods-MyMoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMoodTests/Pods-MyMoodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37BCF7A5C855220D95C9DAD6 /* Pods-MyMood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMood.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMood/Pods-MyMood.release.xcconfig"; sourceTree = "<group>"; };
 		5A3F22D44D3D648FBABE29E9 /* Pods_MyMood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6500FB221FC785260047C3B3 /* Check In.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Check In.entitlements"; sourceTree = "<group>"; };
 		651602F11FC7670B00BA0060 /* ShowDetailForWordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailForWordTableViewController.swift; sourceTree = "<group>"; };
 		65197A071FC0A2BF0065C045 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		65230C0C1FB4F57800282D19 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -96,12 +109,24 @@
 		656E21F61FA91CCB008F9827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		656E21F91FA91CCB008F9827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		656E21FB1FA91CCB008F9827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		656E22001FA91CCC008F9827 /* MyMoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		656E22001FA91CCC008F9827 /* Check InTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Check InTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		656E22041FA91CCC008F9827 /* MyMoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoodTests.swift; sourceTree = "<group>"; };
 		656E22061FA91CCC008F9827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		656E220B1FA91CCC008F9827 /* MyMoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		656E220B1FA91CCC008F9827 /* Check InUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Check InUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		656E220F1FA91CCC008F9827 /* MyMoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoodUITests.swift; sourceTree = "<group>"; };
 		656E22111FA91CCC008F9827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		658FBE621FE67964001B65A1 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		658FBE641FE67986001B65A1 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		658FBE661FE679A3001B65A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		658FBE691FE679C5001B65A1 /* Swap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swap.swift; sourceTree = "<group>"; };
+		658FBE6B1FE679E2001B65A1 /* Cookie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cookie.swift; sourceTree = "<group>"; };
+		658FBE6D1FE679F9001B65A1 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		658FBE6F1FE67A16001B65A1 /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		658FBE711FE67A27001B65A1 /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
+		658FBE731FE67A48001B65A1 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		658FBE751FE67A80001B65A1 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		658FBE761FE67A80001B65A1 /* Levels */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Levels; sourceTree = "<group>"; };
+		658FBE771FE67A80001B65A1 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 		65AE58781FC722A200744811 /* ShowTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTextViewController.swift; sourceTree = "<group>"; };
 		65AE587A1FC7234D00744811 /* WriteItTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteItTableViewController.swift; sourceTree = "<group>"; };
 		65AE587C1FC7495100744811 /* CheckInStudentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInStudentsTableViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +234,7 @@
 		656E21E31FA91CCB008F9827 = {
 			isa = PBXGroup;
 			children = (
+				6500FB221FC785260047C3B3 /* Check In.entitlements */,
 				656E21EE1FA91CCB008F9827 /* MyMood */,
 				656E22031FA91CCC008F9827 /* MyMoodTests */,
 				656E220E1FA91CCC008F9827 /* MyMoodUITests */,
@@ -222,8 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				656E21EC1FA91CCB008F9827 /* Check In.app */,
-				656E22001FA91CCC008F9827 /* MyMoodTests.xctest */,
-				656E220B1FA91CCC008F9827 /* MyMoodUITests.xctest */,
+				656E22001FA91CCC008F9827 /* Check InTests.xctest */,
+				656E220B1FA91CCC008F9827 /* Check InUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,6 +257,7 @@
 		656E21EE1FA91CCB008F9827 /* MyMood */ = {
 			isa = PBXGroup;
 			children = (
+				658FBE611FE678E5001B65A1 /* Game */,
 				65C0FE531FA928C000194DF7 /* Utils.swift */,
 				65C0FE501FA9284B00194DF7 /* Extensions */,
 				65C0FE4F1FA926D700194DF7 /* Student */,
@@ -266,6 +293,33 @@
 			path = MyMoodUITests;
 			sourceTree = "<group>";
 		};
+		658FBE611FE678E5001B65A1 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				658FBE761FE67A80001B65A1 /* Levels */,
+				658FBE751FE67A80001B65A1 /* Sounds */,
+				658FBE771FE67A80001B65A1 /* Sprites.atlas */,
+				658FBE681FE679B7001B65A1 /* Model */,
+				658FBE621FE67964001B65A1 /* GameViewController.swift */,
+				658FBE641FE67986001B65A1 /* GameScene.swift */,
+				658FBE661FE679A3001B65A1 /* Extensions.swift */,
+				658FBE731FE67A48001B65A1 /* Tile.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		658FBE681FE679B7001B65A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				658FBE691FE679C5001B65A1 /* Swap.swift */,
+				658FBE6B1FE679E2001B65A1 /* Cookie.swift */,
+				658FBE6D1FE679F9001B65A1 /* Level.swift */,
+				658FBE6F1FE67A16001B65A1 /* Array2D.swift */,
+				658FBE711FE67A27001B65A1 /* Pair.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		65C0FE4F1FA926D700194DF7 /* Student */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,9 +352,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		656E21EB1FA91CCB008F9827 /* MyMood */ = {
+		656E21EB1FA91CCB008F9827 /* Check In */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 656E22141FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "MyMood" */;
+			buildConfigurationList = 656E22141FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "Check In" */;
 			buildPhases = (
 				E8572EE87DA606039685F639 /* [CP] Check Pods Manifest.lock */,
 				656E21E81FA91CCB008F9827 /* Sources */,
@@ -313,14 +367,14 @@
 			);
 			dependencies = (
 			);
-			name = MyMood;
+			name = "Check In";
 			productName = MyMood;
 			productReference = 656E21EC1FA91CCB008F9827 /* Check In.app */;
 			productType = "com.apple.product-type.application";
 		};
-		656E21FF1FA91CCC008F9827 /* MyMoodTests */ = {
+		656E21FF1FA91CCC008F9827 /* Check InTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 656E22171FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "MyMoodTests" */;
+			buildConfigurationList = 656E22171FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "Check InTests" */;
 			buildPhases = (
 				9519365E862BC96D48605D75 /* [CP] Check Pods Manifest.lock */,
 				656E21FC1FA91CCC008F9827 /* Sources */,
@@ -334,14 +388,14 @@
 			dependencies = (
 				656E22021FA91CCC008F9827 /* PBXTargetDependency */,
 			);
-			name = MyMoodTests;
+			name = "Check InTests";
 			productName = MyMoodTests;
-			productReference = 656E22001FA91CCC008F9827 /* MyMoodTests.xctest */;
+			productReference = 656E22001FA91CCC008F9827 /* Check InTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		656E220A1FA91CCC008F9827 /* MyMoodUITests */ = {
+		656E220A1FA91CCC008F9827 /* Check InUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 656E221A1FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "MyMoodUITests" */;
+			buildConfigurationList = 656E221A1FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "Check InUITests" */;
 			buildPhases = (
 				E6C4679245B368B00A77BFDC /* [CP] Check Pods Manifest.lock */,
 				656E22071FA91CCC008F9827 /* Sources */,
@@ -355,9 +409,9 @@
 			dependencies = (
 				656E220D1FA91CCC008F9827 /* PBXTargetDependency */,
 			);
-			name = MyMoodUITests;
+			name = "Check InUITests";
 			productName = MyMoodUITests;
-			productReference = 656E220B1FA91CCC008F9827 /* MyMoodUITests.xctest */;
+			productReference = 656E220B1FA91CCC008F9827 /* Check InUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -368,11 +422,16 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "Yury Bandarchuk";
+				ORGANIZATIONNAME = "Samantha Parola";
 				TargetAttributes = {
 					656E21EB1FA91CCB008F9827 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					656E21FF1FA91CCC008F9827 = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -399,9 +458,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				656E21EB1FA91CCB008F9827 /* MyMood */,
-				656E21FF1FA91CCC008F9827 /* MyMoodTests */,
-				656E220A1FA91CCC008F9827 /* MyMoodUITests */,
+				656E21EB1FA91CCB008F9827 /* Check In */,
+				656E21FF1FA91CCC008F9827 /* Check InTests */,
+				656E220A1FA91CCC008F9827 /* Check InUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -411,6 +470,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658FBE781FE67A80001B65A1 /* Sounds in Resources */,
+				658FBE791FE67A80001B65A1 /* Levels in Resources */,
 				65230C1D1FB4F58B00282D19 /* Raleway-ExtraBold.ttf in Resources */,
 				65230C181FB4F58B00282D19 /* Raleway-Medium.ttf in Resources */,
 				65230C191FB4F58B00282D19 /* Raleway-SemiBold.ttf in Resources */,
@@ -422,6 +483,7 @@
 				65C0FE561FA929A100194DF7 /* GoogleService-Info.plist in Resources */,
 				65230C1A1FB4F58B00282D19 /* Raleway-Light.ttf in Resources */,
 				65230C1E1FB4F58B00282D19 /* Raleway-Heavy.ttf in Resources */,
+				658FBE7A1FE67A80001B65A1 /* Sprites.atlas in Resources */,
 				65230C1C1FB4F58B00282D19 /* Raleway-Bold.ttf in Resources */,
 				656E21F71FA91CCB008F9827 /* Assets.xcassets in Resources */,
 				656E21F51FA91CCB008F9827 /* Main.storyboard in Resources */,
@@ -590,6 +652,7 @@
 				65AE587F1FC754AB00744811 /* DrawItTableViewController.swift in Sources */,
 				65197A081FC0A2BF0065C045 /* CalendarViewController.swift in Sources */,
 				65ECECBE1FAF3431001B164D /* DrawItViewController.swift in Sources */,
+				658FBE6E1FE679F9001B65A1 /* Level.swift in Sources */,
 				65C0FE521FA9285E00194DF7 /* UIViewController+Extension.swift in Sources */,
 				6550FA4D1FC2274400C23D76 /* CreateClassViewController.swift in Sources */,
 				65AE587B1FC7234D00744811 /* WriteItTableViewController.swift in Sources */,
@@ -599,14 +662,22 @@
 				656A1FE51FC71638008FD628 /* HappinessRatingsTableViewController.swift in Sources */,
 				65C0FE581FA92B7400194DF7 /* AuthLogic.swift in Sources */,
 				65230C221FB500B600282D19 /* TeacherPickMoodAreaViewController.swift in Sources */,
+				658FBE721FE67A27001B65A1 /* Pair.swift in Sources */,
 				65AE58831FC7630B00744811 /* FeelingWordTableViewController.swift in Sources */,
+				658FBE6C1FE679E2001B65A1 /* Cookie.swift in Sources */,
 				6536C8BF1FC58A60000B9F57 /* StudentClassesViewController.swift in Sources */,
+				658FBE6A1FE679C5001B65A1 /* Swap.swift in Sources */,
 				65AE587D1FC7495100744811 /* CheckInStudentsTableViewController.swift in Sources */,
 				65AE58811FC75B2300744811 /* ShowImageViewController.swift in Sources */,
 				65C0FE5A1FA9EE8700194DF7 /* StudentMainViewController.swift in Sources */,
+				658FBE651FE67986001B65A1 /* GameScene.swift in Sources */,
+				658FBE701FE67A16001B65A1 /* Array2D.swift in Sources */,
 				656E21F01FA91CCB008F9827 /* AppDelegate.swift in Sources */,
+				658FBE671FE679A3001B65A1 /* Extensions.swift in Sources */,
 				651602F21FC7670B00BA0060 /* ShowDetailForWordTableViewController.swift in Sources */,
 				65CF4D441FB505C600DCBAD4 /* ClassPeriodViewController.swift in Sources */,
+				658FBE741FE67A48001B65A1 /* Tile.swift in Sources */,
+				658FBE631FE67964001B65A1 /* GameViewController.swift in Sources */,
 				65C0FE541FA928C000194DF7 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,12 +703,12 @@
 /* Begin PBXTargetDependency section */
 		656E22021FA91CCC008F9827 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 656E21EB1FA91CCB008F9827 /* MyMood */;
+			target = 656E21EB1FA91CCB008F9827 /* Check In */;
 			targetProxy = 656E22011FA91CCC008F9827 /* PBXContainerItemProxy */;
 		};
 		656E220D1FA91CCC008F9827 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 656E21EB1FA91CCB008F9827 /* MyMood */;
+			target = 656E21EB1FA91CCB008F9827 /* Check In */;
 			targetProxy = 656E220C1FA91CCC008F9827 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -774,6 +845,7 @@
 			baseConfigurationReference = BE439FDECB5A088EE11745D5 /* Pods-MyMood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Check In.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -794,6 +866,7 @@
 			baseConfigurationReference = 37BCF7A5C855220D95C9DAD6 /* Pods-MyMood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Check In.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -823,7 +896,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyMood.app/MyMood";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Check In.app/Check In";
 			};
 			name = Debug;
 		};
@@ -841,7 +914,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyMood.app/MyMood";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Check In.app/Check In";
 			};
 			name = Release;
 		};
@@ -891,7 +964,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		656E22141FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "MyMood" */ = {
+		656E22141FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "Check In" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				656E22151FA91CCC008F9827 /* Debug */,
@@ -900,7 +973,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		656E22171FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "MyMoodTests" */ = {
+		656E22171FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "Check InTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				656E22181FA91CCC008F9827 /* Debug */,
@@ -909,7 +982,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		656E221A1FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "MyMoodUITests" */ = {
+		656E221A1FA91CCC008F9827 /* Build configuration list for PBXNativeTarget "Check InUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				656E221B1FA91CCC008F9827 /* Debug */,
